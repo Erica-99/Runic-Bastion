@@ -36,12 +36,13 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Do some math to change movedir
+        // Movement
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
         Vector3 moveInputVector = new Vector3(moveInput.x, 0, moveInput.y) * speed;
 
-        
+        Quaternion rotation = Quaternion.FromToRotation(Vector3.forward, transform.forward);
+        moveInputVector = rotation * moveInputVector;
 
         if (!cc.isGrounded) {
             movedir += Physics.gravity * Time.deltaTime; //Need an extra deltatime to convert accel to velocity.
