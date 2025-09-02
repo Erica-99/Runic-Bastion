@@ -11,38 +11,46 @@ public class CameraBehaviour : MonoBehaviour
     private float pitch;
     private float yaw;
 
+    [SerializeField]
+    private GameObject manager;
+    private Manager managerScript;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
 
         lookAction = InputSystem.actions.FindAction("Look");
+
+        managerScript = manager.GetComponent<Manager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 lookInput = lookAction.ReadValue<Vector2>() * Time.smoothDeltaTime;
+        if (!managerScript.castMode)
+        {
+            Vector2 lookInput = lookAction.ReadValue<Vector2>() * Time.smoothDeltaTime;
 
-        pitch += lookInput.y * sensitivity;
-        yaw += lookInput.x * sensitivity;
+            pitch += lookInput.y * sensitivity;
+            yaw += lookInput.x * sensitivity;
 
-        pitch = Mathf.Clamp(pitch, -89, 89);
+            pitch = Mathf.Clamp(pitch, -89, 89);
 
-        float phi = pitch * Mathf.Deg2Rad;
-        float theta = yaw * Mathf.Deg2Rad;
+            float phi = pitch * Mathf.Deg2Rad;
+            float theta = yaw * Mathf.Deg2Rad;
 
-        float sinTheta = Mathf.Sin(theta);
-        float cosTheta = Mathf.Cos(theta);
-        float sinPhi = Mathf.Sin(phi);
-        float cosPhi = Mathf.Cos(phi);
+            float sinTheta = Mathf.Sin(theta);
+            float cosTheta = Mathf.Cos(theta);
+            float sinPhi = Mathf.Sin(phi);
+            float cosPhi = Mathf.Cos(phi);
 
-        Vector3 fwd = new Vector3(cosPhi * sinTheta, sinPhi, cosPhi * cosTheta);
-        transform.forward = fwd;
+            Vector3 fwd = new Vector3(cosPhi * sinTheta, sinPhi, cosPhi * cosTheta);
+            transform.forward = fwd;
 
-        player.transform.forward = new Vector3(fwd.x, 0, fwd.z);
+            player.transform.forward = new Vector3(fwd.x, 0, fwd.z);
+        }
 
         // Sync movement to player
         transform.position = player.transform.position + new Vector3(0, 1f, 0);
-
     }
 }
