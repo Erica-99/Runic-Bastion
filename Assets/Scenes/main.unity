@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 397270283}
-  sensitivity: 10
+  sensitivity: 15
 --- !u!1 &397270283
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.75
   airManoeuvrability: 10
-  jumpSpeed: 0.08
+  jumpSpeed: 0.2
   friction: 0.08
 --- !u!1 &410087039
 GameObject:

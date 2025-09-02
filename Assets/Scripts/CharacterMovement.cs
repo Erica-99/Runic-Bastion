@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using TreeEditor;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
@@ -39,14 +40,15 @@ public class CharacterMovement : MonoBehaviour
         // Movement
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
-        Vector3 moveInputVector = new Vector3(moveInput.x, 0, moveInput.y) * speed;
+        Vector3 moveInputVector = new Vector3(moveInput.x, 0, moveInput.y) * speed; // Lerps provide acceleration effect
 
         Quaternion rotation = Quaternion.FromToRotation(Vector3.forward, transform.forward);
         moveInputVector = rotation * moveInputVector;
 
         if (!cc.isGrounded) {
             movedir += Physics.gravity * Time.deltaTime; //Need an extra deltatime to convert accel to velocity.
-            movedir += ClampxzMagnitude(moveInputVector - Vector3.Project(moveInputVector, new Vector3(cc.velocity.x, 0, cc.velocity.z).normalized), airManoeuvrability * Time.deltaTime);
+            //movedir += ClampxzMagnitude(moveInputVector - Vector3.Project(moveInputVector, new Vector3(cc.velocity.x, 0, cc.velocity.z).normalized), airManoeuvrability * Time.deltaTime);
+            movedir += ClampxzMagnitude(moveInputVector, airManoeuvrability * Time.deltaTime);
         } else
         {
             movedir.Scale(Vector3.one - vectorFriction);
