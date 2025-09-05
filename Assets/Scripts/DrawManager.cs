@@ -29,6 +29,11 @@ public class DrawManager : MonoBehaviour
     public int brushWidth;
     private int savedBrushWidth;
 
+    [SerializeField]
+    private float paperDistance;
+
+    private Ray prevRay;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,11 +48,14 @@ public class DrawManager : MonoBehaviour
 
         savedBrushWidth = brushWidth;
         pixelColours = Enumerable.Repeat(Color.black, savedBrushWidth*savedBrushWidth).ToArray();
+        prevRay = new Ray();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        UpdatePaperPos(paperDistance);
+
         if (brushWidth != savedBrushWidth)
         {
             savedBrushWidth = brushWidth;
@@ -80,15 +88,21 @@ public class DrawManager : MonoBehaviour
 
         if (mousePressed.IsPressed())
         {
-            Ray ray = playerCam.ScreenPointToRay(mousePosition.ReadValue<Vector2>());
+            Vector2 mousePos = mousePosition.ReadValue<Vector2>();
+            Vector3 mouseWorldPos = playerCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, paperDistance));
+            Ray newRay = new Ray(playerCam.transform.position, mouseWorldPos - playerCam.transform.position);
             RaycastHit hit;
 
+            Ray ray = prevRay;
             if (!Physics.Raycast(ray, out hit, maxDistance:1000f, layerMask:paperLayerMask))
             {
+                Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.red);
+                prevRay = newRay;
                 return;
             }
 
-            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.blue);
+            Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.blue);
+            prevRay = newRay;
 
             if (hit.transform != paperObject.transform)
             {
@@ -115,5 +129,12 @@ public class DrawManager : MonoBehaviour
     {
         Color[] brush = Enumerable.Repeat(color, newBrushWidth*newBrushWidth).ToArray();
         return brush;
+    }
+
+    private void UpdatePaperPos(float distance)
+    {
+        Vector3 currentPos = paperObject.transform.localPosition;
+        currentPos.z = distance;
+        paperObject.transform.localPosition = currentPos;
     }
 }
