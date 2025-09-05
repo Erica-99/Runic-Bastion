@@ -64,6 +64,7 @@ public class DrawManager : MonoBehaviour
 
         if (!managerScript.castMode)
         {
+            // Reset texture on closing paper
             if (!textureReset)
             {
                 Texture2D destinationTexture = paperObject.GetComponent<Renderer>().material.GetTexture("_MainTex") as Texture2D;
