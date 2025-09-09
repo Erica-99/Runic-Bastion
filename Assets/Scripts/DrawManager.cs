@@ -1,5 +1,7 @@
 using System.Linq;
 using System.Transactions;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +20,9 @@ public class DrawManager : MonoBehaviour
     [SerializeField]
     private LayerMask paperLayerMask;
 
+    public GameObject pen;
+    private PenMovement penMovement;
+
     private InputAction mousePressed;
     private InputAction mousePosition;
 
@@ -26,7 +31,7 @@ public class DrawManager : MonoBehaviour
 
     [SerializeField]
     [Range(0, 1000)]
-    public int brushWidth;
+    private int brushWidth;
     private int savedBrushWidth;
 
     [SerializeField]
@@ -42,6 +47,8 @@ public class DrawManager : MonoBehaviour
 
         mousePressed = InputSystem.actions.FindAction("Draw");
         mousePosition = InputSystem.actions.FindAction("MousePosition");
+
+        //Paper
         Texture2D currentTexture = paperObject.GetComponent<Renderer>().material.GetTexture("_MainTex") as Texture2D;
         originalTexture = new Texture2D(currentTexture.width, currentTexture.height, TextureFormat.ARGB32, currentTexture.mipmapCount, false);
         Graphics.CopyTexture(currentTexture, originalTexture);
@@ -49,6 +56,9 @@ public class DrawManager : MonoBehaviour
         savedBrushWidth = brushWidth;
         pixelColours = Enumerable.Repeat(Color.black, savedBrushWidth*savedBrushWidth).ToArray();
         prevRay = new Ray();
+
+        //Pen
+        penMovement = pen.GetComponent<PenMovement>();
     }
 
     // Update is called once per frame
@@ -67,48 +77,55 @@ public class DrawManager : MonoBehaviour
             // Reset texture on closing paper
             if (!textureReset)
             {
-                Texture2D destinationTexture = paperObject.GetComponent<Renderer>().material.GetTexture("_MainTex") as Texture2D;
-                Graphics.CopyTexture(originalTexture, destinationTexture);
-                paperObject.GetComponent<Renderer>().material.mainTexture = destinationTexture;
-                destinationTexture.Apply();
+                ResetPaperTexture();
                 textureReset = true;
             }
             
             paperObject.SetActive(false);
-            return;
+            penMovement.followCursor = false;
+        }
+        else
+        {
+            paperObject.SetActive(true);
+            penMovement.followCursor = true;
+
+            DrawOnPaper();
         }
 
-        paperObject.SetActive(true);
-
-        DrawOnPaper();
+        
     }
 
     void DrawOnPaper()
     {
         textureReset = false;
 
+        Vector2 mousePos = mousePosition.ReadValue<Vector2>();
+        Vector3 mouseWorldPos = playerCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, paperDistance));
+
+        Ray newRay = new Ray(playerCam.transform.position, mouseWorldPos - playerCam.transform.position);
+        RaycastHit hit;
+
+        Ray ray = prevRay;
+        if (!Physics.Raycast(ray, out hit, maxDistance: 1000f, layerMask: paperLayerMask))
+        {
+            Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.red);
+            prevRay = newRay;
+            return;
+        }
+
+        Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.blue);
+        prevRay = newRay;
+
+        if (hit.transform != paperObject.transform)
+        {
+            return;
+        }
+
+        penMovement.targetMousePoint = mouseWorldPos;
+
         if (mousePressed.IsPressed())
         {
-            Vector2 mousePos = mousePosition.ReadValue<Vector2>();
-            Vector3 mouseWorldPos = playerCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, paperDistance));
-            Ray newRay = new Ray(playerCam.transform.position, mouseWorldPos - playerCam.transform.position);
-            RaycastHit hit;
-
-            Ray ray = prevRay;
-            if (!Physics.Raycast(ray, out hit, maxDistance:1000f, layerMask:paperLayerMask))
-            {
-                Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.red);
-                prevRay = newRay;
-                return;
-            }
-
-            Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.blue);
-            prevRay = newRay;
-
-            if (hit.transform != paperObject.transform)
-            {
-                return;
-            }
+            penMovement.mouseDown = true;
 
             Renderer rend = hit.transform.GetComponent<Renderer>();
             MeshCollider meshCollider = hit.collider as MeshCollider;
@@ -123,6 +140,9 @@ public class DrawManager : MonoBehaviour
 
             tex.SetPixels((int)pixelUV.x, (int)pixelUV.y, savedBrushWidth, savedBrushWidth, pixelColours);
             tex.Apply();
+        } else
+        {
+            penMovement.mouseDown = false;
         }
     }
 
@@ -137,5 +157,13 @@ public class DrawManager : MonoBehaviour
         Vector3 currentPos = paperObject.transform.localPosition;
         currentPos.z = distance;
         paperObject.transform.localPosition = currentPos;
+    }
+
+    private void ResetPaperTexture()
+    {
+        Texture2D destinationTexture = paperObject.GetComponent<Renderer>().material.GetTexture("_MainTex") as Texture2D;
+        Graphics.CopyTexture(originalTexture, destinationTexture);
+        paperObject.GetComponent<Renderer>().material.mainTexture = destinationTexture;
+        destinationTexture.Apply();
     }
 }
