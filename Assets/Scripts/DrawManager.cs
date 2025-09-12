@@ -99,13 +99,15 @@ public class DrawManager : MonoBehaviour
     {
         textureReset = false;
 
+        Physics.SyncTransforms();
+
         Vector2 mousePos = mousePosition.ReadValue<Vector2>();
         Vector3 mouseWorldPos = playerCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, paperDistance));
 
         Ray newRay = new Ray(playerCam.transform.position, mouseWorldPos - playerCam.transform.position);
         RaycastHit hit;
 
-        Ray ray = prevRay;
+        Ray ray = newRay;
         if (!Physics.Raycast(ray, out hit, maxDistance: 1000f, layerMask: paperLayerMask))
         {
             Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.red);
@@ -114,14 +116,15 @@ public class DrawManager : MonoBehaviour
         }
 
         Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.blue);
-        prevRay = newRay;
 
         if (hit.transform != paperObject.transform)
         {
+            prevRay = newRay;
             return;
         }
 
-        penMovement.targetMousePoint = mouseWorldPos;
+        penMovement.targetMousePoint = hit.point;
+        prevRay = newRay;
 
         if (mousePressed.IsPressed())
         {

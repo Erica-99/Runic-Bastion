@@ -25,7 +25,7 @@ public class PenMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Physics.SyncTransforms();
+        //Physics.SyncTransforms();
         if (followCursor)
         {
             Vector3 currentTarget;

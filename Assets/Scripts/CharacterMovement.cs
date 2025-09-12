@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class CharacterMovement : MonoBehaviour
 {
     CharacterController cc;
-    Vector3 movedir;
+    public Vector3 movedir;
     InputAction moveAction;
     InputAction jumpAction;
 
