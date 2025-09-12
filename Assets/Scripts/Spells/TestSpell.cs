@@ -21,8 +21,8 @@ public class TestSpell : Rune
 
     // ----- DONT EDIT BELOW HERE -----
 
-    public void Initialize(GameObject pointPrefab, bool debug=false)
+    public override void Initialize(GameObject pointPrefab, bool debug=false)
     {
-        base.Initialize(customRune, pointPrefab, debug);
+        base.Initialize(pointPrefab, debug);
     }
 }

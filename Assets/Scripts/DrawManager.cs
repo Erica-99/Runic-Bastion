@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class DrawManager : MonoBehaviour
 {
@@ -38,7 +39,9 @@ public class DrawManager : MonoBehaviour
     private float paperDistance;
 
     private Ray prevRay;
+    private SpellManager spellManager;
 
+    private bool createdSpells;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -59,12 +62,16 @@ public class DrawManager : MonoBehaviour
 
         //Pen
         penMovement = pen.GetComponent<PenMovement>();
+
+        //Spells
+        spellManager = GetComponent<SpellManager>();
+        createdSpells = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        UpdatePaperPos(paperDistance);
+        //UpdatePaperPos(paperDistance);
 
         if (brushWidth != savedBrushWidth)
         {
@@ -83,11 +90,15 @@ public class DrawManager : MonoBehaviour
             
             paperObject.SetActive(false);
             penMovement.followCursor = false;
+            createdSpells = false;
         }
         else
         {
             paperObject.SetActive(true);
             penMovement.followCursor = true;
+
+            if (!createdSpells) spellManager.createSpells();
+            createdSpells = true;
 
             DrawOnPaper();
         }

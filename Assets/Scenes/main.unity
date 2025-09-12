@@ -1188,6 +1188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1936250676}
   - component: {fileID: 1936250677}
+  - component: {fileID: 1936250678}
   m_Layer: 0
   m_Name: DrawManager
   m_TagString: Untagged
@@ -1232,6 +1233,20 @@ MonoBehaviour:
   pen: {fileID: 390063958}
   brushWidth: 50
   paperDistance: 1.2
+--- !u!114 &1936250678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936250675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1daef171e53fa44b21847543929fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paper: {fileID: 1539695622}
+  drawingSphere: {fileID: 2612001287081462830, guid: 60db3481eb211674ea562121d8f85d0b, type: 3}
 --- !u!1001 &7389372392159329820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1283,10 +1298,6 @@ PrefabInstance:
     - target: {fileID: 3511797149155292536, guid: dcfc792c31f259e4b9dd78661e8fd40e, type: 3}
       propertyPath: m_Name
       value: TestSpellRune
-      objectReference: {fileID: 0}
-    - target: {fileID: 8054015061038741431, guid: dcfc792c31f259e4b9dd78661e8fd40e, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

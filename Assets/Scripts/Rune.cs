@@ -14,6 +14,8 @@ abstract public class Rune : MonoBehaviour
     protected Manager managerScript;
 
     public bool completed;
+
+    List<Vector2> customRune;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -23,8 +25,9 @@ abstract public class Rune : MonoBehaviour
         managerScript = manager.GetComponent<Manager>();
     }
 
-    public virtual void Initialize(List<Vector2> drawPointPositions, GameObject pointPrefab, bool debug=false)
+    public virtual void Initialize(GameObject pointPrefab, bool debug=false)
     {
+        List<Vector2> drawPointPositions = customRune;
         List<Vector2> transformedPoints = drawPointPositions;
         transformedPoints = TransformDrawpoints(transformedPoints);
 
