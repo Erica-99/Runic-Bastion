@@ -97,8 +97,11 @@ public class DrawManager : MonoBehaviour
             paperObject.SetActive(true);
             penMovement.followCursor = true;
 
-            if (!createdSpells) spellManager.createSpells();
-            createdSpells = true;
+            if (!createdSpells)
+            {
+                spellManager.createSpells();
+                createdSpells = true;
+            }
 
             DrawOnPaper();
         }

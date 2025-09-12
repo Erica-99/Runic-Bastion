@@ -23,7 +23,7 @@ public class SpellManager : MonoBehaviour
         foreach (GameObject spellPrefab in gameManager.spellPrefabs)
         {
             GameObject newSpell = Instantiate(spellPrefab, paper.transform);
-            newSpell.GetComponent<Rune>().Initialize(drawingSphere, debug:true);
+            newSpell.GetComponent<Rune>().Initialize(drawingSphere, true);
         }
     }
 
