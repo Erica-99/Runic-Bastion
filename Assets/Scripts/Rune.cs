@@ -16,13 +16,6 @@ abstract public class Rune : MonoBehaviour
     public bool completed;
 
     protected List<Vector2> customRune;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
-    {
-        
-        
-    }
 
     public virtual void Initialize(GameObject pointPrefab, bool debug=false)
     {
@@ -65,9 +58,10 @@ abstract public class Rune : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Collision detected");
         Collider sphereCollider = collision.GetContact(0).thisCollider;
 
-        if ( sphereCollider == drawPoints[nextPoint].GetComponent<Collider>())
+        if (sphereCollider == drawPoints[nextPoint].GetComponent<Collider>())
         {
             drawPoints[nextPoint].GetComponent<Renderer>().material.color = new Color(0f, 1f, 0f, 0.75f);
 

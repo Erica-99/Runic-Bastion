@@ -23,13 +23,17 @@ public class SpellManager : MonoBehaviour
         foreach (GameObject spellPrefab in gameManager.spellPrefabs)
         {
             GameObject newSpell = Instantiate(spellPrefab, paper.transform);
+            newSpell.transform.localScale = ElementWiseDivide(newSpell.transform.localScale, paper.transform.localScale);
             newSpell.GetComponent<Rune>().Initialize(drawingSphere, true);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private Vector3 ElementWiseDivide(Vector3 a, Vector3 b)
     {
-        
+        return new Vector3(
+            a.x / b.x,
+            a.y / b.y,
+            a.z / b.z);
     }
+
 }
