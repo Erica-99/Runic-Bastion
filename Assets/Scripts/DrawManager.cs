@@ -91,6 +91,7 @@ public class DrawManager : MonoBehaviour
             paperObject.SetActive(false);
             penMovement.followCursor = false;
             createdSpells = false;
+            managerScript.triggerSpellCheck();
         }
         else
         {

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TestSpell : Rune
 {
+    public override int Priority { get; set; } = 0;
+
     private void Awake()
     {
         // Scaled to [0,1] x and y on the drawable section of the paper. This will be resized automatically to the paper.
@@ -18,9 +20,6 @@ public class TestSpell : Rune
 
     public override void DoSpell()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("FIREBALL :)");
     }
-
-
-    // ----- DONT EDIT BELOW HERE -----
 }

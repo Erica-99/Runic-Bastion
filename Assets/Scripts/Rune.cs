@@ -17,6 +17,8 @@ abstract public class Rune : MonoBehaviour
 
     protected List<Vector2> customRune;
 
+    public abstract int Priority { get; set; }
+
     public virtual void Initialize(GameObject pointPrefab, bool debug=false)
     {
         drawPoints = new List<GameObject>();
@@ -47,7 +49,7 @@ abstract public class Rune : MonoBehaviour
 
     public abstract void DoSpell();
 
-    void ClearSpheres()
+    public void ClearSpheres()
     {
         foreach (GameObject point in drawPoints)
         {
@@ -58,7 +60,11 @@ abstract public class Rune : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision detected");
+        if (nextPoint >= drawPoints.Count)
+        {
+            return;
+        }
+
         Collider sphereCollider = collision.GetContact(0).thisCollider;
 
         if (sphereCollider == drawPoints[nextPoint].GetComponent<Collider>())
