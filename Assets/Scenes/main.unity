@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paper: {fileID: 6492112790186822299}
   drawingSphere: {fileID: 2612001287081462830, guid: 60db3481eb211674ea562121d8f85d0b, type: 3}
-  showDebug: 1
+  showDebug: 0
 --- !u!23 &4690607174927559502
 MeshRenderer:
   m_ObjectHideFlags: 0
