@@ -19,11 +19,15 @@ abstract public class Rune : MonoBehaviour
 
     public abstract int Priority { get; set; }
 
+    private Rigidbody rb;
+
     public virtual void Initialize(GameObject pointPrefab, bool debug=false)
     {
         drawPoints = new List<GameObject>();
         manager = GameObject.FindGameObjectWithTag("GameController");
         managerScript = manager.GetComponent<Manager>();
+
+        rb = GetComponent<Rigidbody>();
 
 
         List<Vector2> drawPointPositions = customRune;
@@ -96,5 +100,14 @@ abstract public class Rune : MonoBehaviour
         }
 
         return newPoints;
+    }
+
+    private void FixedUpdate()
+    {
+        // Really fucked workaround to make the spheres detect collisions. Collisions are only detected if they are "moving", so we do this.
+        if (rb != null && rb.IsSleeping())
+        {
+            rb.MovePosition(transform.position);
+        }
     }
 }

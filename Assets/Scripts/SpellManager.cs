@@ -10,6 +10,8 @@ public class SpellManager : MonoBehaviour
     public GameObject paper;
     public GameObject drawingSphere;
 
+    public bool showDebug;
+
     void Awake()
     {
         GameObject manager = GameObject.FindGameObjectWithTag("GameController");
@@ -23,7 +25,7 @@ public class SpellManager : MonoBehaviour
         foreach (GameObject spellPrefab in gameManager.spellPrefabs)
         {
             GameObject newSpell = Instantiate(spellPrefab, paper.transform);
-            newSpell.GetComponent<Rune>().Initialize(drawingSphere, true);
+            newSpell.GetComponent<Rune>().Initialize(drawingSphere, showDebug);
             spells.Add(newSpell);
         }
     }
