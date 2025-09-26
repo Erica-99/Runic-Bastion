@@ -14,17 +14,23 @@ abstract public class Rune : MonoBehaviour
     protected Manager managerScript;
 
     public bool completed;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+
+    protected List<Vector2> customRune;
+
+    public abstract int Priority { get; set; }
+
+    private Rigidbody rb;
+
+    public virtual void Initialize(GameObject pointPrefab, bool debug=false)
     {
         drawPoints = new List<GameObject>();
         manager = GameObject.FindGameObjectWithTag("GameController");
         managerScript = manager.GetComponent<Manager>();
-    }
 
-    public virtual void Initialize(List<Vector2> drawPointPositions, GameObject pointPrefab, bool debug=false)
-    {
+        rb = GetComponent<Rigidbody>();
+
+
+        List<Vector2> drawPointPositions = customRune;
         List<Vector2> transformedPoints = drawPointPositions;
         transformedPoints = TransformDrawpoints(transformedPoints);
 
@@ -47,7 +53,7 @@ abstract public class Rune : MonoBehaviour
 
     public abstract void DoSpell();
 
-    void ClearSpheres()
+    public void ClearSpheres()
     {
         foreach (GameObject point in drawPoints)
         {
@@ -58,9 +64,14 @@ abstract public class Rune : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (nextPoint >= drawPoints.Count)
+        {
+            return;
+        }
+
         Collider sphereCollider = collision.GetContact(0).thisCollider;
 
-        if ( sphereCollider == drawPoints[nextPoint].GetComponent<Collider>())
+        if (sphereCollider == drawPoints[nextPoint].GetComponent<Collider>())
         {
             drawPoints[nextPoint].GetComponent<Renderer>().material.color = new Color(0f, 1f, 0f, 0.75f);
 
@@ -89,5 +100,14 @@ abstract public class Rune : MonoBehaviour
         }
 
         return newPoints;
+    }
+
+    private void FixedUpdate()
+    {
+        // Really fucked workaround to make the spheres detect collisions. Collisions are only detected if they are "moving", so we do this.
+        if (rb != null && rb.IsSleeping())
+        {
+            rb.MovePosition(transform.position);
+        }
     }
 }

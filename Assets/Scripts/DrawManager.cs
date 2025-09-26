@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class DrawManager : MonoBehaviour
 {
@@ -38,7 +39,9 @@ public class DrawManager : MonoBehaviour
     private float paperDistance;
 
     private Ray prevRay;
+    private SpellManager spellManager;
 
+    private bool createdSpells;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -59,12 +62,16 @@ public class DrawManager : MonoBehaviour
 
         //Pen
         penMovement = pen.GetComponent<PenMovement>();
+
+        //Spells
+        spellManager = GetComponent<SpellManager>();
+        createdSpells = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        UpdatePaperPos(paperDistance);
+        //UpdatePaperPos(paperDistance);
 
         if (brushWidth != savedBrushWidth)
         {
@@ -83,11 +90,19 @@ public class DrawManager : MonoBehaviour
             
             paperObject.SetActive(false);
             penMovement.followCursor = false;
+            createdSpells = false;
+            managerScript.triggerSpellCheck();
         }
         else
         {
             paperObject.SetActive(true);
             penMovement.followCursor = true;
+
+            if (!createdSpells)
+            {
+                spellManager.createSpells();
+                createdSpells = true;
+            }
 
             DrawOnPaper();
         }
@@ -99,13 +114,15 @@ public class DrawManager : MonoBehaviour
     {
         textureReset = false;
 
+        Physics.SyncTransforms();
+
         Vector2 mousePos = mousePosition.ReadValue<Vector2>();
         Vector3 mouseWorldPos = playerCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, paperDistance));
 
         Ray newRay = new Ray(playerCam.transform.position, mouseWorldPos - playerCam.transform.position);
         RaycastHit hit;
 
-        Ray ray = prevRay;
+        Ray ray = newRay;
         if (!Physics.Raycast(ray, out hit, maxDistance: 1000f, layerMask: paperLayerMask))
         {
             Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.red);
@@ -114,14 +131,15 @@ public class DrawManager : MonoBehaviour
         }
 
         Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.blue);
-        prevRay = newRay;
 
         if (hit.transform != paperObject.transform)
         {
+            prevRay = newRay;
             return;
         }
 
-        penMovement.targetMousePoint = mouseWorldPos;
+        penMovement.targetMousePoint = hit.point;
+        prevRay = newRay;
 
         if (mousePressed.IsPressed())
         {
