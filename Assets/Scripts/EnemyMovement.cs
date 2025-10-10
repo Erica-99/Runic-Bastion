@@ -15,4 +15,16 @@ public class EnemyMovement : MonoBehaviour
     {
         agent.destination = target.position;
     }
-}
+
+    public class CollisionDetector : MonoBehaviour
+    {
+        void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag.Equals("Crystal") == true)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    }
