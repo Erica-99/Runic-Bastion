@@ -6,6 +6,6 @@ public class PlantTower : Tower
 
     protected override void Behaviour()
     {
-        throw new System.NotImplementedException();
+        
     }
 }
