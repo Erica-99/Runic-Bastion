@@ -10,6 +10,6 @@ public class PlantTower : Tower
     protected override void Behaviour(GameObject target)
     {
         GameObject vine = Instantiate(projectile, transform, false);
-        vine.transform.rotation = Quaternion.LookRotation(target.transform.position);
+        vine.GetComponent<VineBehaviour>().Release(target);
     }
 }
