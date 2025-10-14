@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class PlantTower : Tower
 {
-    protected override float Interval { get; } = 6f;
+    public GameObject projectile;
+
+    protected override float Interval { get; } = 7f;
 
     protected override void Behaviour()
     {
