@@ -99,19 +99,19 @@ public class VineBehaviour : MonoBehaviour
 
         if (relativeAnimationProgress < 0.1f)
         {
-            basePos = new Vector3(0f, -4f, 0f);
+            basePos = new Vector3(0f, -6f, 0f);
             sectionTime = relativeAnimationProgress / 0.1f;
-            spikeTargetY = 2f;
+            spikeTargetY = 0f;
         } else if (relativeAnimationProgress < 0.6f)
         {
-            basePos = new Vector3(0f, 2f, 0f);
+            basePos = new Vector3(0f, 0f, 0f);
             sectionTime = (relativeAnimationProgress - 0.2f) / 0.5f;
-            spikeTargetY = 1.8f;
+            spikeTargetY = -0.2f;
         } else
         {
-            basePos = new Vector3(0f, 1.8f, 0f);
+            basePos = new Vector3(0f, -0.2f, 0f);
             sectionTime = (relativeAnimationProgress - 0.6f) / 0.4f;
-            spikeTargetY = -4f;
+            spikeTargetY = -8f;
         }
 
         spike_model.transform.localPosition = Vector3.Lerp(basePos, new Vector3(0f, spikeTargetY, 0f), sectionTime);
@@ -141,7 +141,7 @@ public class VineBehaviour : MonoBehaviour
         
         // - Rotation -
         //First calculate outer radius.
-        float majorRad = 1.25f * curvy_model.transform.localScale.x / 100f;
+        float majorRad = 0.9f * curvy_model.transform.localScale.x / 100f;
 
         //Calculate circumference
         float majorCirc = 2f * Mathf.PI * majorRad;
@@ -151,7 +151,7 @@ public class VineBehaviour : MonoBehaviour
 
         modelRotationX -= circFrac * 360f;
 
-        curvy_model.transform.localRotation = Quaternion.Euler(new Vector3(modelRotationX, 0, 0));
+        curvy_model.transform.localRotation = Quaternion.Euler(new Vector3(modelRotationX, 0, 90));
         
     }
 }

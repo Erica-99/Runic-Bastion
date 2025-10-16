@@ -1,6 +1,8 @@
 #nullable enable
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public abstract class Tower : MonoBehaviour
@@ -15,7 +17,7 @@ public abstract class Tower : MonoBehaviour
     [SerializeField]
     private bool waitForEnemy = true;
 
-    private Color gizmoColour = new Color(1f, 0f, 0f, 0.5f);
+    private Material? gizmoMaterial;
 
     void FixedUpdate()
     {
@@ -72,10 +74,19 @@ public abstract class Tower : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        if (gizmoMaterial == null)
+        {
+            string[] ringMatGUIDs = AssetDatabase.FindAssets("RangeRing", new string[] { "Assets/Materials" });
+            string path = AssetDatabase.GUIDToAssetPath(ringMatGUIDs[0]);
+            Material loadedMaterial = AssetDatabase.LoadAssetAtPath<Material>(path);
+            gizmoMaterial = loadedMaterial;
+        }
+
         Matrix4x4 oldMatrix = Gizmos.matrix;
-        Gizmos.color = gizmoColour;
-        Gizmos.matrix = Matrix4x4.TRS(transform.position + new Vector3(0f, 6f, 0f), transform.rotation, new Vector3(1, 0.02f, 1));
-        Gizmos.DrawSphere(Vector3.zero, radius);
+        Matrix4x4 matrix = Matrix4x4.TRS(transform.position + 6f * Vector3.up, Quaternion.identity, Vector3.one);
+        Mesh rangeRing = RingMeshGenerator.GenerateMesh(60, radius, 1f, 0.2f);
+        gizmoMaterial.SetPass(6);
+        Graphics.DrawMeshNow(rangeRing, matrix);
         Gizmos.matrix = oldMatrix;
     }
 }
