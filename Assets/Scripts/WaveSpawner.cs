@@ -7,20 +7,27 @@ public class WaveSpawner : MonoBehaviour
 
     public Transform spawnPoint;
 
+    public int maxWaves = 3;
+
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
 
-    private int waveNumber = 0;
+    private int waveNumber = 1;
+    private bool currentWaveComplete = true;
 
     void Update()
     {
-        if(countdown <= 0f)
+        if(countdown <= 0f && maxWaves > 0)
         {
+            currentWaveComplete = false;
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
 
-        countdown -= Time.deltaTime;
+        if (currentWaveComplete)
+        {
+            countdown -= Time.deltaTime;
+        }
     }
 
     IEnumerator SpawnWave()
@@ -32,6 +39,8 @@ public class WaveSpawner : MonoBehaviour
         }
 
         waveNumber++;
+        currentWaveComplete = true;
+        maxWaves--;
     }
 
     void SpawnEnemy()
