@@ -6,6 +6,8 @@ public class EnemyMovement : MonoBehaviour
     public Transform target;
     private NavMeshAgent agent;
 
+    private Rigidbody rb;
+
     public float DistToCrystal
     {
         get
@@ -17,6 +19,8 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = true;
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
