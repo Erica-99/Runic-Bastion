@@ -25,6 +25,8 @@ public class VineBehaviour : MonoBehaviour
     public float spikeAnimationTime = 5f;
     private float currentSpikeAnimationPoint;
 
+    private bool collidedWithEnemy = false;
+
     public void Release(GameObject _target)
     {
         target = _target;
@@ -75,7 +77,7 @@ public class VineBehaviour : MonoBehaviour
 
         transform.position = transform.position + currVel * transform.forward;
 
-        if ((targetPoint-transform.position).magnitude < coll.radius)
+        if (((targetPoint-transform.position).magnitude < coll.radius) || collidedWithEnemy)
         {
             startDescent = true;
             coll.enabled = false;
@@ -153,5 +155,16 @@ public class VineBehaviour : MonoBehaviour
 
         curvy_model.transform.localRotation = Quaternion.Euler(new Vector3(modelRotationX, 0, 90));
         
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if ((transform.position - other.transform.position).magnitude < 2f) //Only proc if really close
+            {
+                collidedWithEnemy = true;
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ public abstract class Tower : MonoBehaviour
     protected float radius;
 
     [SerializeField]
-    private bool waitForEnemy = true;
+    protected bool waitForEnemy = true;
 
     private Material? gizmoMaterial;
 
@@ -36,6 +36,11 @@ public abstract class Tower : MonoBehaviour
                     timeElapsed = 0;
                     Behaviour(target);
                 }
+            }
+            else
+            {
+                timeElapsed = 0;
+                Behaviour(gameObject);
             }
         }
         else
@@ -83,7 +88,7 @@ public abstract class Tower : MonoBehaviour
         }
 
         Matrix4x4 oldMatrix = Gizmos.matrix;
-        Matrix4x4 matrix = Matrix4x4.TRS(transform.position + 6f * Vector3.up, Quaternion.identity, Vector3.one);
+        Matrix4x4 matrix = Matrix4x4.TRS(transform.position + 4.5f * Vector3.up, Quaternion.identity, Vector3.one);
         Mesh rangeRing = RingMeshGenerator.GenerateMesh(60, radius, 1f, 0.2f);
         gizmoMaterial.SetPass(6);
         Graphics.DrawMeshNow(rangeRing, matrix);
