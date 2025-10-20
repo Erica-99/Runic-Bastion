@@ -1,8 +1,4 @@
-using System;
-using System.Runtime.CompilerServices;
-using TreeEditor;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
@@ -17,6 +13,9 @@ public class CharacterMovement : MonoBehaviour
     public float jumpSpeed = 1f;
 
     public float friction = 0.1f;
+
+    public float speedBuff = 1f;
+    public float jumpBuff = 1f;
 
     private float currentJumpTime;
     private Vector3 vectorFriction;

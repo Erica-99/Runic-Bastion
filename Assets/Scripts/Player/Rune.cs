@@ -1,8 +1,5 @@
-using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.VisualScripting;
-using UnityEngine.SceneManagement;
 
 abstract public class Rune : MonoBehaviour
 {

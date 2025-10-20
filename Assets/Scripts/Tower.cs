@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
+using RunicBastion.Utils;
 
 
 public abstract class Tower : MonoBehaviour
@@ -89,7 +89,7 @@ public abstract class Tower : MonoBehaviour
 
         Matrix4x4 oldMatrix = Gizmos.matrix;
         Matrix4x4 matrix = Matrix4x4.TRS(transform.position + 4.5f * Vector3.up, Quaternion.identity, Vector3.one);
-        Mesh rangeRing = RingMeshGenerator.GenerateMesh(60, radius, 1f, 0.2f);
+        Mesh rangeRing = CustomMeshGenerator.GenerateRingMesh(60, radius, 1f, 0.2f);
         gizmoMaterial.SetPass(6);
         Graphics.DrawMeshNow(rangeRing, matrix);
         Gizmos.matrix = oldMatrix;

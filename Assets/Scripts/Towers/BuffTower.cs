@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class BuffTower : Tower
+namespace RunicBastion.Towers
 {
-    public GameObject projectile;
-
-    protected override float Interval { get; } = 5f;
-
-    protected override void Behaviour(GameObject target)
+    public class BuffTower : Tower
     {
-        GameObject ring = Instantiate(projectile, transform, false);
-        ring.GetComponent<BuffSpell>().Release(radius);
+        public GameObject projectile;
+
+        protected override float Interval { get; } = 5f;
+
+        protected override void Behaviour(GameObject target)
+        {
+            GameObject ring = Instantiate(projectile, transform, false);
+            ring.GetComponent<BuffSpell>().Release(radius);
+        }
     }
 }

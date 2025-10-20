@@ -1,102 +1,107 @@
 using UnityEngine;
+using RunicBastion.Utils;
 
-[RequireComponent (typeof(MeshFilter))]
-[RequireComponent (typeof(MeshCollider))]
-[RequireComponent(typeof(MeshRenderer))]
-public class BuffSpell : MonoBehaviour
+namespace RunicBastion.Towers
 {
-    public float pulseSpeed;
-    public float slowPoint;
-    public float lingerTime;
-
-    private MeshFilter mf;
-    private MeshCollider mc;
-    private MeshRenderer mr;
-
-    private float maxRadius;
-    private float currentRadius = 1f;
-
-    private bool begin = false;
-    private bool beginLinger = false;
-
-    private float lingerTimer = 0f;
-
-    private float initialAlpha;
-    private float currentAlpha;
-
-    Mesh currentMesh;
-
-    public void Release(float SetMaxRadius)
+    [RequireComponent(typeof(MeshFilter))]
+    [RequireComponent(typeof(MeshCollider))]
+    [RequireComponent(typeof(MeshRenderer))]
+    public class BuffSpell : MonoBehaviour
     {
-        maxRadius = SetMaxRadius;
-        begin = true;
-    }
+        public float pulseSpeed;
+        public float lingerTime;
 
-    void Start()
-    {
-        currentMesh = RingMeshGenerator.GenerateMesh(120, currentRadius, 1f, 0.1f);
+        private MeshFilter mf;
+        private MeshCollider mc;
+        private MeshRenderer mr;
 
-        mf = GetComponent<MeshFilter>();
-        mc = GetComponent<MeshCollider>();
+        private float maxRadius;
+        private float currentRadius = 1f;
 
-        mf.mesh = currentMesh;
-        mc.sharedMesh = null;
-        mc.sharedMesh = currentMesh;
+        private bool begin = false;
+        private bool beginLinger = false;
 
-        mr = GetComponent<MeshRenderer>();
-        initialAlpha = mr.material.color.a;
-    }
+        private float lingerTimer = 0f;
 
-    void Update()
-    {
-        if (!begin)
+        private float initialAlpha;
+
+        Mesh currentRingMesh;
+        Mesh currentSphereMesh;
+
+        public void Release(float SetMaxRadius)
         {
-            return;
+            maxRadius = SetMaxRadius;
+            begin = true;
         }
 
-        UpdateMesh();
-        ApplyMesh();
-        
-        if (beginLinger)
+        void Start()
         {
-            Linger();
+            currentRingMesh = CustomMeshGenerator.GenerateRingMesh(120, currentRadius, 1f, 0.1f);
+            currentSphereMesh = CustomMeshGenerator.GenerateSphereMesh(8, currentRadius);
+
+            mf = GetComponent<MeshFilter>();
+            mc = GetComponent<MeshCollider>();
+
+            mf.mesh = currentRingMesh;
+            mc.sharedMesh = null;
+            mc.sharedMesh = currentSphereMesh;
+
+            mr = GetComponent<MeshRenderer>();
+            initialAlpha = mr.material.color.a;
         }
-    }
 
-    void UpdateMesh()
-    {
-        //Code to expand the ring
-
-        currentRadius += (pulseSpeed * Time.deltaTime) * (1-(currentRadius/maxRadius));
-
-        currentMesh = RingMeshGenerator.GenerateMesh(120, currentRadius, 1f, 0.1f);
-
-        if (!(currentRadius*1.8f < maxRadius))
+        void Update()
         {
-            beginLinger = true;
+            if (!begin)
+            {
+                return;
+            }
+
+            UpdateMesh();
+            ApplyMesh();
+
+            if (beginLinger)
+            {
+                Linger();
+            }
         }
-    }
 
-    void ApplyMesh()
-    {
-        mf.mesh = currentMesh;
-        mc.sharedMesh = null;
-        mc.sharedMesh = currentMesh;
-    }
-
-    void Linger()
-    {
-        if (lingerTimer > lingerTime)
+        void UpdateMesh()
         {
-            Destroy(gameObject);
+            //Code to expand the ring and sphere
+
+            currentRadius += pulseSpeed * Time.deltaTime * (1 - (0.95f*currentRadius / maxRadius));
+
+            currentRingMesh = CustomMeshGenerator.GenerateRingMesh(120, currentRadius, 1f, 0.1f);
+            currentSphereMesh = CustomMeshGenerator.GenerateSphereMesh(8, currentRadius);
+
+            if (!(currentRadius + 2f < maxRadius))
+            {
+                beginLinger = true;
+            }
         }
-        else
-        {
-            lingerTimer += Time.deltaTime;
 
-            Color currentColor = mr.material.color;
-            currentColor.a = Mathf.Lerp(initialAlpha, 0f, lingerTimer / lingerTime);
-            mr.material.color = currentColor;
+        void ApplyMesh()
+        {
+            mf.mesh = currentRingMesh;
+            mc.sharedMesh = null;
+            mc.sharedMesh = currentSphereMesh;
+        }
+
+        void Linger()
+        {
+            if (lingerTimer > lingerTime)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                lingerTimer += Time.deltaTime;
+
+                Color currentColor = mr.material.color;
+                currentColor.a = Mathf.Lerp(initialAlpha, 0f, lingerTimer / lingerTime);
+                mr.material.color = currentColor;
+            }
         }
     }
 }
