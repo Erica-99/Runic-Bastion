@@ -3,6 +3,8 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public int health = 10;
+
     public Transform target;
     private NavMeshAgent agent;
 
@@ -23,8 +25,32 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    public void TakeDamage(int amount) 
+    {
+        health -= amount;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
     private void Update()
     {
         agent.destination = target.position;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Crystal")
+        {
+            PlayerLives.Lives--;
+            Destroy(gameObject, 3);
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

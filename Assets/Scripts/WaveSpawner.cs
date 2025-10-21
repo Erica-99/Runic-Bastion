@@ -5,7 +5,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public Transform enemyPrefab;
 
-    public Transform spawnPoint;
+    public Transform[] spawnPoints;
 
     public int maxWaves = 3;
 
@@ -45,6 +45,9 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        int randomSpawnPoint = Random.Range(0, spawnPoints.Length);
+        Transform chosenSpawnPoint = spawnPoints[randomSpawnPoint];
+
+        Instantiate(enemyPrefab, chosenSpawnPoint.position, chosenSpawnPoint.rotation);
     }
 }
