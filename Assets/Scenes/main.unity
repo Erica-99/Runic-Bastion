@@ -660,6 +660,8 @@ MonoBehaviour:
   castMode: 0
   spellPrefabs:
   - {fileID: 3511797149155292536, guid: dcfc792c31f259e4b9dd78661e8fd40e, type: 3}
+  - {fileID: 3511797149155292536, guid: f5e8858398543b043b0413c5aba24904, type: 3}
+  WizardController: {fileID: 1899223050}
 --- !u!4 &1065823496
 Transform:
   m_ObjectHideFlags: 0
@@ -1892,6 +1894,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6040170796722658063, guid: 95ae83f7b46a2ed4c872cff2d4950aa3, type: 3}
   m_PrefabInstance: {fileID: 1842272801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1899223050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3387831898070662639, guid: d0cf90cd28f7454468e35aee01f51f43, type: 3}
+  m_PrefabInstance: {fileID: 5701700386312696390}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3321068780941898930
 PrefabInstance:

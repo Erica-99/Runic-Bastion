@@ -6,7 +6,7 @@ namespace RunicBastion.Towers
     {
         public GameObject projectile;
 
-        protected override float Interval { get; } = 5f;
+        protected override float Interval { get; } = 10f;
 
         protected override void Behaviour(GameObject target)
         {

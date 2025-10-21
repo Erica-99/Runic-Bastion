@@ -13,12 +13,15 @@ public class BuffManager : MonoBehaviour
 
     private void Awake()
     {
-        Stats[(int)Stat.Speed] = 0f;
-        Stats[(int)Stat.Jump] = 0f;
-        Stats[(int)Stat.Attack] = 0f;
+        Stats[(int)Stat.Speed] = 1f;
+        Stats[(int)Stat.Jump] = 1f;
+        Stats[(int)Stat.Attack] = 1f;
     }
 
     private List<StatusEffect> currentEffects = new();
+
+    public CharacterMovement movementScript;
+    public AttackManager attackScript;
 
     public void ApplyStatusEffect(StatusEffect statusEffect)
     {
@@ -71,5 +74,9 @@ public class BuffManager : MonoBehaviour
             RemoveStatusEffect(statusEffect);
             currentEffects.Remove(statusEffect);
         }
+
+        movementScript.speedBuff = Stats[(int)Stat.Speed];
+        movementScript.jumpBuff = Stats[(int)Stat.Jump];
+        attackScript.attackBuff = Stats[(int)Stat.Attack];
     }
 }

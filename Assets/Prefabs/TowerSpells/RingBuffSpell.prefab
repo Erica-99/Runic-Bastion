@@ -49,6 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pulseSpeed: 30
   lingerTime: 1
+  buffDuration: 5
+  buffToApply:
+  - stat: 2
+    amount: 1
 --- !u!33 &3947773004194182211
 MeshFilter:
   m_ObjectHideFlags: 0

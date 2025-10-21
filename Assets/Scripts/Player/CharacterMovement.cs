@@ -39,7 +39,7 @@ public class CharacterMovement : MonoBehaviour
         // Movement
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
-        Vector3 moveInputVector = new Vector3(moveInput.x, 0, moveInput.y) * speed; // Lerps provide acceleration effect
+        Vector3 moveInputVector = new Vector3(moveInput.x, 0, moveInput.y) * speed * speedBuff; // Lerps provide acceleration effect
 
         Quaternion rotation = Quaternion.FromToRotation(Vector3.forward, transform.forward);
         moveInputVector = rotation * moveInputVector;
@@ -59,11 +59,11 @@ public class CharacterMovement : MonoBehaviour
         {
             if (jumpAction.IsPressed())
             {
-                movedir += Vector3.up * jumpSpeed;
+                movedir += Vector3.up * jumpSpeed * jumpBuff;
 
-                if (cc.velocity.y < 1.5f)
+                if (cc.velocity.y < 1.5f * jumpBuff)
                 {
-                    movedir += Vector3.up * 1.5f;
+                    movedir += Vector3.up * 1.5f * jumpBuff;
                 }
 
                 currentJumpTime -= Time.deltaTime;
@@ -71,6 +71,14 @@ public class CharacterMovement : MonoBehaviour
             {
                 currentJumpTime = 0;
             }
+        }
+
+        if (cc.isGrounded)
+        {
+            movedir = ClampxzMagnitude(movedir, 9.3f * speedBuff);
+        } else
+        {
+            movedir = ClampxzMagnitude(movedir, 1.3f * 9.3f * speedBuff);
         }
 
         cc.Move(movedir * Time.deltaTime);
