@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestSpell : Rune
+public class MovementSpell : Rune
 {
     public override int Priority { get; set; } = 0;
 

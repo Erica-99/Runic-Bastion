@@ -11,6 +11,8 @@ public class Manager : MonoBehaviour
 
     public List<GameObject> spellPrefabs;
 
+    public GameObject WizardController;
+
     public event System.Action CheckSpells;
     private bool spellInvokeQueued = false;
 

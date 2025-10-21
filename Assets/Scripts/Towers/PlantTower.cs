@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public class PlantTower : Tower
+namespace RunicBastion.Towers
 {
-    public GameObject projectile;
-
-    protected override float Interval { get; } = 7f;
-
-
-    protected override void Behaviour(GameObject target)
+    public class PlantTower : Tower
     {
-        GameObject vine = Instantiate(projectile, transform, false);
-        vine.GetComponent<VineBehaviour>().Release(target);
+        public GameObject projectile;
+
+        protected override float Interval { get; } = 7f;
+
+        protected override void Behaviour(GameObject target)
+        {
+            GameObject vine = Instantiate(projectile, transform, false);
+            vine.GetComponent<VineBehaviour>().Release(target);
+        }
     }
 }
