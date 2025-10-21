@@ -256,11 +256,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5537132415079508832}
-  - component: {fileID: 1745616429364221535}
-  - component: {fileID: 2357079795669937800}
-  - component: {fileID: 3252693931928649200}
   - component: {fileID: 8016978883277939630}
   - component: {fileID: 2810141394071418795}
+  - component: {fileID: 3187758581728077893}
+  - component: {fileID: 1579334301300435595}
+  - component: {fileID: 3417923373936994907}
   m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
@@ -284,80 +284,6 @@ Transform:
   - {fileID: 4104986443342675018}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1745616429364221535
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8915445735823836465}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2357079795669937800
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8915445735823836465}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 22dc80f78b00cce40b6251b62f65e8e0, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3252693931928649200
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8915445735823836465}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8016978883277939630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,8 +334,82 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.18333334
   m_MinRegionArea: 100
-  m_NavMeshData: {fileID: 23800000, guid: a0313fd86b5ab1742b8c0ce4c017ba9f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a769a7018559eba4bb79669b2698b481, type: 2}
   m_BuildHeightMesh: 0
+--- !u!23 &3187758581728077893
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8915445735823836465}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 22dc80f78b00cce40b6251b62f65e8e0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1579334301300435595
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8915445735823836465}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &3417923373936994907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8915445735823836465}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &102815987534815851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -469,6 +469,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -577,6 +581,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (79)
@@ -683,6 +691,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -791,6 +803,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (181)
@@ -897,6 +913,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -1005,6 +1025,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (40)
@@ -1111,6 +1135,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -1219,6 +1247,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (146)
@@ -1325,6 +1357,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -1433,6 +1469,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (58)
@@ -1539,6 +1579,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -1647,6 +1691,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (164)
@@ -1753,6 +1801,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -1861,6 +1913,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (109)
@@ -1967,6 +2023,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -2075,6 +2135,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (122)
@@ -2181,6 +2245,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -2289,6 +2357,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (128)
@@ -2395,6 +2467,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -2503,6 +2579,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Moveable Hedge
@@ -2609,6 +2689,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -2717,6 +2801,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (19)
@@ -2823,6 +2911,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -2931,6 +3023,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (140)
@@ -3037,6 +3133,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -3145,6 +3245,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (94)
@@ -3251,6 +3355,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -3359,6 +3467,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (100)
@@ -3465,6 +3577,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -3573,6 +3689,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (190)
@@ -3679,6 +3799,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -3787,6 +3911,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (154)
@@ -3893,6 +4021,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -4001,6 +4133,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (16)
@@ -4107,6 +4243,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -4215,6 +4355,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (115)
@@ -4321,6 +4465,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -4429,6 +4577,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (50)
@@ -4535,6 +4687,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -4643,6 +4799,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (111)
@@ -4749,6 +4909,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -4857,6 +5021,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (51)
@@ -4963,6 +5131,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -5071,6 +5243,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (118)
@@ -5177,6 +5353,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -5285,6 +5465,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (42)
@@ -5391,6 +5575,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -5499,6 +5687,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (147)
@@ -5605,6 +5797,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -5713,6 +5909,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (88)
@@ -5819,6 +6019,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -5927,6 +6131,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (114)
@@ -6033,6 +6241,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -6141,6 +6353,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (56)
@@ -6247,6 +6463,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -6355,6 +6575,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (89)
@@ -6461,6 +6685,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -6569,6 +6797,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (2)
@@ -6675,6 +6907,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -6783,6 +7019,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (156)
@@ -6889,6 +7129,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -6997,6 +7241,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (177)
@@ -7103,6 +7351,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -7211,6 +7463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (110)
@@ -7317,6 +7573,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -7425,6 +7685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (54)
@@ -7531,6 +7795,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -7639,6 +7907,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (170)
@@ -7745,6 +8017,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -7853,6 +8129,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (178)
@@ -7959,6 +8239,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -8067,6 +8351,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (48)
@@ -8173,6 +8461,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -8281,6 +8573,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (21)
@@ -8387,6 +8683,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -8495,6 +8795,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (9)
@@ -8601,6 +8905,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -8709,6 +9017,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (104)
@@ -8815,6 +9127,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -8923,6 +9239,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (121)
@@ -9029,6 +9349,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -9137,6 +9461,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (68)
@@ -9243,6 +9571,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -9351,6 +9683,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (169)
@@ -9457,6 +9793,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -9565,6 +9905,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (66)
@@ -9671,6 +10015,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -9779,6 +10127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (149)
@@ -9885,6 +10237,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -9993,6 +10349,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (168)
@@ -10099,6 +10459,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -10207,6 +10571,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (7)
@@ -10313,6 +10681,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -10421,6 +10793,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (87)
@@ -10527,6 +10903,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -10635,6 +11015,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (86)
@@ -10741,6 +11125,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -10849,6 +11237,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (137)
@@ -10955,6 +11347,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -11063,6 +11459,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (116)
@@ -11169,6 +11569,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -11277,6 +11681,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (167)
@@ -11383,6 +11791,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -11491,6 +11903,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (30)
@@ -11597,6 +12013,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -11705,6 +12125,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (160)
@@ -11811,6 +12235,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -11919,6 +12347,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (55)
@@ -12025,6 +12457,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -12133,6 +12569,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (174)
@@ -12239,6 +12679,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -12347,6 +12791,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (69)
@@ -12453,6 +12901,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -12561,6 +13013,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (103)
@@ -12667,6 +13123,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -12775,6 +13235,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (75)
@@ -12881,6 +13345,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -12989,6 +13457,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (78)
@@ -13095,6 +13567,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -13203,6 +13679,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (72)
@@ -13309,6 +13789,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -13417,6 +13901,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (141)
@@ -13523,6 +14011,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -13631,6 +14123,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (31)
@@ -13737,6 +14233,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -13845,6 +14345,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (28)
@@ -13951,6 +14455,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -14059,6 +14567,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (151)
@@ -14165,6 +14677,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -14273,6 +14789,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (161)
@@ -14379,6 +14899,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -14487,6 +15011,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (22)
@@ -14593,6 +15121,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -14701,6 +15233,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (1)
@@ -14807,6 +15343,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -14915,6 +15455,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (39)
@@ -15021,6 +15565,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -15129,6 +15677,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (53)
@@ -15235,6 +15787,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -15343,6 +15899,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (52)
@@ -15449,6 +16009,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -15557,6 +16121,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (139)
@@ -15663,6 +16231,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -15771,6 +16343,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (98)
@@ -15877,6 +16453,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -15985,6 +16565,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (159)
@@ -16091,6 +16675,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -16199,6 +16787,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (76)
@@ -16305,6 +16897,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -16413,6 +17009,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (112)
@@ -16519,6 +17119,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -16627,6 +17231,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (152)
@@ -16733,6 +17341,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -16841,6 +17453,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (29)
@@ -16947,6 +17563,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -17055,6 +17675,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (142)
@@ -17161,6 +17785,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -17269,6 +17897,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (180)
@@ -17375,6 +18007,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -17483,6 +18119,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (144)
@@ -17590,6 +18230,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (108)
@@ -17695,6 +18339,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
@@ -17804,6 +18452,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (127)
@@ -17910,6 +18562,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -18018,6 +18674,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (125)
@@ -18124,6 +18784,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -18232,6 +18896,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (130)
@@ -18338,6 +19006,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -18446,6 +19118,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (63)
@@ -18552,6 +19228,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -18660,6 +19340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (11)
@@ -18766,6 +19450,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -18874,6 +19562,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (64)
@@ -18980,6 +19672,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -19088,6 +19784,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (102)
@@ -19194,6 +19894,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -19302,6 +20006,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (93)
@@ -19408,6 +20116,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -19516,6 +20228,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (113)
@@ -19622,6 +20338,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -19730,6 +20450,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (38)
@@ -19836,6 +20560,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -19944,6 +20672,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (106)
@@ -20050,6 +20782,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -20158,6 +20894,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (194)
@@ -20264,6 +21004,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -20372,6 +21116,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (24)
@@ -20478,6 +21226,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -20586,6 +21338,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (120)
@@ -20692,6 +21448,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -20800,6 +21560,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (14)
@@ -20906,6 +21670,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
@@ -21014,6 +21782,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (173)
@@ -21121,6 +21893,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name
       value: Hedge Model (126)
@@ -21227,6 +22003,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0b0710c4ffc5ad1479f979c211a84cb1, type: 3}
       propertyPath: m_Name

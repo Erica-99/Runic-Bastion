@@ -146,7 +146,7 @@ namespace RunicBastion.Towers
 
             // - Rotation -
             //First calculate outer radius.
-            float majorRad = 0.9f * curvy_model.transform.localScale.x / 100f;
+            float majorRad = 0.9f * curvy_model.transform.localScale.x;
 
             //Calculate circumference
             float majorCirc = 2f * Mathf.PI * majorRad;

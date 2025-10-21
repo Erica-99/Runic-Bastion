@@ -15,7 +15,7 @@ public class PlayerLives : MonoBehaviour
     {
         if (Lives > 0)
         {
-            print(Lives);
+            //print(Lives);
         }
 
         if (Lives == 0)
