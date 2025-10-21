@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5941979673263405695}
   - component: {fileID: 7837140817384172181}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CrystalNexus
   m_TagString: Crystal
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 8839680090623002386}
   - component: {fileID: 7517857263083203025}
   - component: {fileID: 7119503267103045450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

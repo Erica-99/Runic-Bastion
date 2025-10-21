@@ -639,14 +639,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrystalNexus
       objectReference: {fileID: 0}
-    - target: {fileID: 2916308222213762982, guid: 49eaa438a5e6ca04d9d2e4064ecbcf96, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330363455336581290, guid: 49eaa438a5e6ca04d9d2e4064ecbcf96, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5941979673263405695, guid: 49eaa438a5e6ca04d9d2e4064ecbcf96, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -850,14 +842,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 892663720}
     m_Modifications:
-    - target: {fileID: 2810141394071418795, guid: 18981b7a91eab0e4d9bc4f2b16ab7cc0, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: a769a7018559eba4bb79669b2698b481, type: 2}
-    - target: {fileID: 3187758581728077893, guid: 18981b7a91eab0e4d9bc4f2b16ab7cc0, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 22dc80f78b00cce40b6251b62f65e8e0, type: 2}
     - target: {fileID: 5537132415079508832, guid: 18981b7a91eab0e4d9bc4f2b16ab7cc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1234,18 +1218,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1281409253999448031, guid: d0cf90cd28f7454468e35aee01f51f43, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8f62984dfb8d33043a51529535f07f2f, type: 2}
-    - target: {fileID: 1281409253999448031, guid: d0cf90cd28f7454468e35aee01f51f43, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8f62984dfb8d33043a51529535f07f2f, type: 2}
-    - target: {fileID: 1281409253999448031, guid: d0cf90cd28f7454468e35aee01f51f43, type: 3}
-      propertyPath: 'm_Materials.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8f62984dfb8d33043a51529535f07f2f, type: 2}
     - target: {fileID: 1509867263119530895, guid: d0cf90cd28f7454468e35aee01f51f43, type: 3}
       propertyPath: manager
       value: 
@@ -1258,14 +1230,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerRoot
       objectReference: {fileID: 0}
-    - target: {fileID: 7444977014701342384, guid: d0cf90cd28f7454468e35aee01f51f43, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7444977014701342384, guid: d0cf90cd28f7454468e35aee01f51f43, type: 3}
-      propertyPath: 'm_Materials.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2100000, guid: d4323a4cd5501814dad07a3b85671706, type: 2}
     - target: {fileID: 7686565776416982984, guid: d0cf90cd28f7454468e35aee01f51f43, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
