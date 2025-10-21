@@ -25,14 +25,17 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void TakeDamage(int amount) 
+    public bool TakeDamage(int amount)
     {
         health -= amount;
 
         if (health <= 0)
         {
             Die();
+            return true;
         }
+
+        return false;
     }
 
     private void Update()
