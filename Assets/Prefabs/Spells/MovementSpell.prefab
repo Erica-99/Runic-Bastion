@@ -73,3 +73,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  buffDuration: 15
+  buffToApply:
+  - stat: 0
+    amount: 0.2
+  - stat: 1
+    amount: 2

@@ -78,7 +78,8 @@ public class CharacterMovement : MonoBehaviour
             movedir = ClampxzMagnitude(movedir, 9.3f * speedBuff);
         } else
         {
-            movedir = ClampxzMagnitude(movedir, 1.3f * 9.3f * speedBuff);
+            Vector3 clamped = ClampxzMagnitude(movedir, 1.3f * 9.3f * speedBuff);
+            movedir = new Vector3(clamped.x, movedir.y, clamped.z);
         }
 
         cc.Move(movedir * Time.deltaTime);
