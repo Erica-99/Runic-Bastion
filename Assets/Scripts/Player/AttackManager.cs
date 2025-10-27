@@ -7,5 +7,8 @@ public class AttackManager : MonoBehaviour
 
     public float attackBuff;
 
+    void CastAttack()
+    {
 
+    }
 }
