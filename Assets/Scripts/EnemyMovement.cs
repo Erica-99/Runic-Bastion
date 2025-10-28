@@ -48,12 +48,15 @@ public class EnemyMovement : MonoBehaviour
         if (collision.gameObject.tag == "Crystal")
         {
             PlayerLives.Lives--;
+            WaveSpawner.enemiesAlive--;
             Destroy(gameObject, 3);
         }
     }
 
     void Die()
     {
+        WaveSpawner.enemiesAlive--;
+
         Destroy(gameObject);
     }
 }
