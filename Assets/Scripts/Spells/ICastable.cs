@@ -6,6 +6,8 @@ public interface ICastable
     public bool readied { get; set; }
     public bool casted { get; set; }
 
+    public float damageBuff { get; set; }
+
     public void ReadyCast(GameObject character);
 
     public void DoCast();

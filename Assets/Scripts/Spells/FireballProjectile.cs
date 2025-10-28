@@ -8,6 +8,8 @@ public class FireballProjectile : MonoBehaviour, ICastable
     public bool readied { get; set; }
     public bool casted { get; set; }
 
+    public float damageBuff { get; set; }
+
     public GameObject vfxObject;
     public GameObject explosionObject;
 
@@ -15,11 +17,15 @@ public class FireballProjectile : MonoBehaviour, ICastable
 
     public float maxExplosionSize = 15f;
 
+    public float damage = 7f;
+
     public LayerMask aimLayerMask;
 
     private Rigidbody rb;
 
     private InputAction castInput;
+
+    private bool popped = false;
 
     void OnEnable()
     {
@@ -39,6 +45,7 @@ public class FireballProjectile : MonoBehaviour, ICastable
     }
 
 
+    // Put the fireball in your hand
     public void ReadyCast(GameObject character)
     {
         if (readied == true)
@@ -46,17 +53,17 @@ public class FireballProjectile : MonoBehaviour, ICastable
             return;
         }
 
-        // To be called by attack manager. Set up floating fireball in hand or whatever.
         characterObject = character;
 
-        transform.parent = characterObject.transform;
+        transform.parent = characterObject.GetComponent<AttackManager>().playerCamera.transform;
 
-        transform.localPosition = new Vector3(-0.7f, 0.85f, 0.468f);
+        transform.localPosition = new Vector3(-0.7f, -0.15f, 0.468f);
         transform.localRotation = Quaternion.identity;
 
         readied = true;
     }
 
+    // Shoot fireball
     public void DoCast()
     {
         if (!readied || casted)
@@ -64,7 +71,6 @@ public class FireballProjectile : MonoBehaviour, ICastable
             return;
         }
 
-        // Shoot the fireball forwards.
         rb.isKinematic = false;
 
         Camera mainCam = Camera.main;
@@ -87,12 +93,59 @@ public class FireballProjectile : MonoBehaviour, ICastable
         
         rb.AddForce(forceDirection * speed, ForceMode.Impulse);
 
+        vfxObject.GetComponent<Collider>().enabled = true;
+
         readied = false;
         casted = true;
     }
 
-    void ReceiveCastInput(InputAction.CallbackContext context)
+    private void ReceiveCastInput(InputAction.CallbackContext context)
     {
         DoCast();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!popped)
+        {
+            rb.isKinematic = true;
+            
+            vfxObject.SetActive(false);
+            explosionObject.SetActive(true);
+            popped = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            EnemyMovement enemyScript = other.gameObject.GetComponent<EnemyMovement>();
+
+            enemyScript.TakeDamage(damage * damageBuff);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!casted)
+        {
+            transform.localScale = new Vector3(damageBuff, damageBuff, damageBuff);
+        }
+
+        if (!popped)
+        {
+            return;
+        }
+
+        if (explosionObject.transform.localScale.x >= maxExplosionSize)
+        {
+            Destroy(gameObject);
+        } else
+        {
+            float scaleUp = maxExplosionSize * Time.deltaTime / 0.7f;
+
+            explosionObject.transform.localScale += new Vector3(scaleUp, scaleUp, scaleUp);
+        }  
     }
 }

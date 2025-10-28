@@ -573,6 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAttack: 1
   attackBuff: 1
+  playerCamera: {fileID: 1403289532619611895}
 --- !u!114 &2843572867303885186
 MonoBehaviour:
   m_ObjectHideFlags: 0

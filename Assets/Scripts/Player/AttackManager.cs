@@ -6,8 +6,9 @@ public class AttackManager : MonoBehaviour
 
     public float attackBuff;
 
+    public GameObject playerCamera;
+
     private ICastable loadedAttack;
-    private GameObject loadedAttackObject;
 
     private Manager manager;
 
@@ -28,12 +29,6 @@ public class AttackManager : MonoBehaviour
         } else
         {
             loadedAttack = attackObject.GetComponent<ICastable>();
-
-            MonoBehaviour attackmb = loadedAttack as MonoBehaviour;
-            if (attackmb != null)
-            {
-                loadedAttackObject = attackmb.gameObject;
-            }
         }
     }
 
@@ -51,10 +46,7 @@ public class AttackManager : MonoBehaviour
         {
             if (loadedAttack.readied)
             {
-                if (loadedAttackObject != null)
-                {
-                    loadedAttackObject.transform.localScale = new Vector3(baseAttack*attackBuff, baseAttack*attackBuff, baseAttack*attackBuff);
-                }
+                loadedAttack.damageBuff = attackBuff;
 
                 manager.SetCrosshairState(true);
             } else
