@@ -16,6 +16,13 @@ public class Manager : MonoBehaviour
     public event System.Action CheckSpells;
     private bool spellInvokeQueued = false;
 
+    public GameObject crosshair;
+
+    public void SetCrosshairState(bool state)
+    {
+        crosshair.SetActive(state);
+    }
+
     public void triggerSpellCheck()
     {
         spellInvokeQueued = true;
