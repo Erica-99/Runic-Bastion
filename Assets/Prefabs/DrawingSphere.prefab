@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6000784033226542322}
   - component: {fileID: 6626583824348785827}
   - component: {fileID: 7461955712330521456}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: DrawingSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

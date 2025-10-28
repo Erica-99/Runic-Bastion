@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1923443470293266481}
   - component: {fileID: 7743751012328470055}
-  - component: {fileID: -7663152246053190971}
+  - component: {fileID: 6468218086892166694}
   m_Layer: 0
-  m_Name: MovementSpell
+  m_Name: FireballSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &-7663152246053190971
+--- !u!114 &6468218086892166694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,13 +69,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3511797149155292536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c84d25d8ee9571843baac2095470c388, type: 3}
+  m_Script: {fileID: 11500000, guid: 30062cf5153d290439afc45a01a75e52, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireballSpell
   completed: 0
-  buffDuration: 15
-  buffToApply:
-  - stat: 0
-    amount: 0.2
-  - stat: 1
-    amount: 2
+  fireballProjectile: {fileID: 827072254639447715, guid: 200cb057d3904ab4780cc313a9b92424, type: 3}

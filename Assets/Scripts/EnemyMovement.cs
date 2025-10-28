@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public int health = 10;
+    public float health = 10;
 
     public Transform target;
     private NavMeshAgent agent;
@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public bool TakeDamage(int amount)
+    public bool TakeDamage(float amount)
     {
         health -= amount;
 

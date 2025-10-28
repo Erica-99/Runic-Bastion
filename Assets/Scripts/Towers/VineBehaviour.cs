@@ -26,11 +26,15 @@ namespace RunicBastion.Towers
         private float currentSpikeAnimationPoint;
 
         private bool collidedWithEnemy = false;
+        private Vector3 targetPoint;
 
-        public void Release(GameObject _target)
+        private float spikeDamage = 0f;
+
+        public void Release(GameObject _target, float damage)
         {
             target = _target;
             coll = GetComponent<SphereCollider>();
+            spikeDamage = damage;
 
             // Set initial heading.
             NavMeshAgent agent = target.GetComponent<NavMeshAgent>();
@@ -62,14 +66,18 @@ namespace RunicBastion.Towers
 
         void MovingVine()
         {
-            NavMeshAgent agent = target.GetComponent<NavMeshAgent>();
+            if (target != null)
+            {
+                NavMeshAgent agent = target.GetComponent<NavMeshAgent>();
 
-            Vector3 vectorToAgent = target.transform.position - transform.position;
-            float enemySpeedToVine = Vector3.Project(agent.velocity, -vectorToAgent).magnitude;
-            float collideTimeEst = vectorToAgent.magnitude / (speed + enemySpeedToVine) + curvyVineDownTotalTime / 2;
-            Vector3 enemyPredictedVector = agent.velocity * collideTimeEst;
-            Vector3 enemyPredictedPoint = target.transform.position + enemyPredictedVector;
-            Vector3 targetPoint = new Vector3(enemyPredictedPoint.x, transform.position.y, enemyPredictedPoint.z);
+                Vector3 vectorToAgent = target.transform.position - transform.position;
+                float enemySpeedToVine = Vector3.Project(agent.velocity, -vectorToAgent).magnitude;
+                float collideTimeEst = vectorToAgent.magnitude / (speed + enemySpeedToVine) + curvyVineDownTotalTime / 2;
+                Vector3 enemyPredictedVector = agent.velocity * collideTimeEst;
+                Vector3 enemyPredictedPoint = target.transform.position + enemyPredictedVector;
+                targetPoint = new Vector3(enemyPredictedPoint.x, transform.position.y, enemyPredictedPoint.z);
+            }
+
             Vector3 targetToLook = Vector3.Lerp(transform.forward, targetPoint - transform.position, 0.2f * Time.deltaTime);
 
             transform.rotation = Quaternion.LookRotation(targetToLook);
@@ -82,6 +90,7 @@ namespace RunicBastion.Towers
             {
                 startDescent = true;
                 coll.enabled = false;
+                spike_model.GetComponent<Collider>().enabled = true;
             }
 
             MovingVineAnimation(currVel);
@@ -162,11 +171,27 @@ namespace RunicBastion.Towers
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag("Enemy"))
+            if (!triggered)
             {
-                if ((transform.position - other.transform.position).magnitude < 2f) //Only proc if really close
+                if (other.gameObject.CompareTag("Enemy"))
                 {
-                    collidedWithEnemy = true;
+                    if ((transform.position - other.transform.position).magnitude < 2f) //Only proc if really close
+                    {
+                        collidedWithEnemy = true;
+                    }
+                }
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (triggered)
+            {
+                if (other.gameObject.CompareTag("Enemy"))
+                {
+                    EnemyMovement enemyScript = other.gameObject.GetComponent<EnemyMovement>();
+
+                    enemyScript.TakeDamage(spikeDamage);
                 }
             }
         }
