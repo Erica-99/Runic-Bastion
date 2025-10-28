@@ -3,51 +3,55 @@ using System.Collections;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform enemyPrefab;
+    public static int enemiesAlive = 0;
+
+    public Wave[] waves;
 
     public Transform[] spawnPoints;
-
-    public int maxWaves = 3;
 
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
 
-    private int waveNumber = 1;
-    private bool currentWaveComplete = true;
+    private int waveNumber = 0;
 
     void Update()
     {
-        if(countdown <= 0f && maxWaves > 0)
+        if (enemiesAlive > 0)
         {
-            currentWaveComplete = false;
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
+            return;
         }
 
-        if (currentWaveComplete)
+        if(countdown <= 0f)
         {
-            countdown -= Time.deltaTime;
+            StartCoroutine(SpawnWave());
+            countdown = timeBetweenWaves;
+            return;
         }
+
+        countdown -= Time.deltaTime;
     }
 
     IEnumerator SpawnWave()
     {
-        for(int i = 0; i < waveNumber; i++) 
-        {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
-        }
+        Wave wave = waves[waveNumber];
 
-        waveNumber++;
-        currentWaveComplete = true;
-        maxWaves--;
-    }
-
-    void SpawnEnemy()
-    {
         int randomSpawnPoint = Random.Range(0, spawnPoints.Length);
         Transform chosenSpawnPoint = spawnPoints[randomSpawnPoint];
 
-        Instantiate(enemyPrefab, chosenSpawnPoint.position, chosenSpawnPoint.rotation);
+        for (int i = 0; i < wave.count; i++) 
+        {
+            SpawnEnemy(wave.enemy, chosenSpawnPoint);
+            yield return new WaitForSeconds(1f / wave.rate);
+        }
+
+        waveNumber++;
+
+    }
+
+    void SpawnEnemy(GameObject enemy, Transform spawnPoint)
+    {
+
+        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        enemiesAlive++;
     }
 }
