@@ -10,7 +10,6 @@ public class PlayerLives : MonoBehaviour
         Lives = startLives;
     }
 
-    // this is only here to check if the enemies actually reduce lives when they reach the crystal
     void Update()
     {
         if (Lives == 0)
