@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 407859913063840265}
   - component: {fileID: 6423982875308532700}
   - component: {fileID: 6918371797429226117}
+  - component: {fileID: 6500011336579309380}
   m_Layer: 0
   m_Name: TowerModel
   m_TagString: Untagged
@@ -89,6 +90,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &6500011336579309380
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016147431431585174}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.98}
 --- !u!1 &6598813407890765566
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,3 +180,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   placeableRadius: 10
+  mainTowerScript: {fileID: 8515001384845085336}
+  modelObject: {fileID: 2016147431431585174}

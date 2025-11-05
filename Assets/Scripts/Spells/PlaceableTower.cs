@@ -25,6 +25,8 @@ public class PlaceableTower : MonoBehaviour, ICastable
     private bool enablePlace = false;
 
     private int ignoreRaycastLayermask;
+    public MonoBehaviour mainTowerScript;
+    public GameObject modelObject;
 
     public void ReadyCast(GameObject character)
     {
@@ -41,15 +43,36 @@ public class PlaceableTower : MonoBehaviour, ICastable
         transform.localRotation = Quaternion.identity;
         transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
-        readied = true;
-
         indicator = Instantiate(placementIndicator);
         indicatorRenderer = indicator.GetComponent<Renderer>();
+
+        readied = true;
     }
 
     public void DoCast()
     {
+        if (!readied || casted)
+        {
+            return;
+        }
 
+        if (!enablePlace)
+        {
+            return;
+        }
+
+        transform.parent = null;
+        transform.position = new Vector3(targetPoint.x, 0f, targetPoint.z);
+        transform.rotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
+
+        Destroy(indicator);
+        mainTowerScript.enabled = true;
+        modelObject.GetComponent<Collider>().enabled = true;
+
+        readied = false;
+        casted = true;
+        this.enabled = false;
     }
 
     void Awake()
@@ -65,6 +88,11 @@ public class PlaceableTower : MonoBehaviour, ICastable
 
     void FixedUpdate()
     {
+        if (indicator == null)
+        {
+            return;
+        }
+
         Ray aimRay = mainCam.ScreenPointToRay(screenCentre);
         RaycastHit hit;
         bool hitHedge = false;
