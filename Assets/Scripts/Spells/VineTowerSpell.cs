@@ -5,6 +5,8 @@ public class VineTowerSpell : Rune
 {
     public override int Priority { get; set; } = 0;
 
+    public GameObject VineTower;
+
     private void Awake()
     {
         // Scaled to [0,1] x and y on the drawable section of the paper. This will be resized automatically to the paper.
@@ -21,5 +23,15 @@ public class VineTowerSpell : Rune
     public override void DoSpell()
     {
         Debug.Log("VINE TOWER :)");
+
+        Manager manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<Manager>();
+
+        AttackManager atkman = manager.WizardController.GetComponent<AttackManager>();
+
+        GameObject instance = Instantiate(VineTower);
+
+        atkman.LoadAttack(instance);
+
+        atkman.ReadyAttack();
     }
 }

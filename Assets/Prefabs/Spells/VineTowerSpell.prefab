@@ -73,3 +73,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VineTowerSpell
   completed: 0
+  VineTower: {fileID: 6598813407890765566, guid: ec0a389246dd0fd45a13d348a65aaf2b, type: 3}

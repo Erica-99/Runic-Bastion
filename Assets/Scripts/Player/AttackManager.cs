@@ -28,6 +28,13 @@ public class AttackManager : MonoBehaviour
             return;
         } else
         {
+            if (loadedAttack != null && loadedAttack.casted == false)
+            {
+                MonoBehaviour mb = loadedAttack as MonoBehaviour;
+
+                Destroy(mb.gameObject);
+            }
+
             loadedAttack = attackObject.GetComponent<ICastable>();
         }
     }
