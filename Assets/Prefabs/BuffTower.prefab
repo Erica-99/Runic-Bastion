@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1356711292341743296}
   - component: {fileID: 3443335195825796194}
   - component: {fileID: 5161383254971724003}
+  - component: {fileID: 2034270604286342259}
   m_Layer: 0
   m_Name: TowerModel
   m_TagString: Untagged
@@ -61,6 +62,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,10 +85,34 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &2034270604286342259
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7788475368392365584}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.98}
 --- !u!1 &8564257294059973991
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2955250154889396781}
   - component: {fileID: 2067874429264167730}
+  - component: {fileID: 4831917691474965430}
   m_Layer: 0
   m_Name: BuffTower
   m_TagString: Untagged
@@ -126,7 +154,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8564257294059973991}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaac6f6e215c8db4c8befbb0d7263589, type: 3}
   m_Name: 
@@ -134,3 +162,22 @@ MonoBehaviour:
   radius: 25
   waitForEnemy: 0
   projectile: {fileID: 1387889822459690112, guid: 5bc94ca71b6ec8442ae3b1da7ee7d66d, type: 3}
+--- !u!114 &4831917691474965430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564257294059973991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6ceb97fe79ac54b846b1b98125d12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PleaceableVineTower
+  placementIndicator: {fileID: 8746424817475717993, guid: 9c2f0dde4a15d5648b95d748d3fe8b18, type: 3}
+  aimLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  placeableRadius: 10
+  mainTowerScript: {fileID: 2067874429264167730}
+  modelObject: {fileID: 7788475368392365584}
