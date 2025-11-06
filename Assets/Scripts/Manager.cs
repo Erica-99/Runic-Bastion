@@ -25,6 +25,8 @@ public class Manager : MonoBehaviour
     private WaveSpawner waveSpawner;
     public TextMeshProUGUI pagesTextbox;
 
+    private InputAction freePagesButton;
+
     public void UsePage()
     {
         pages--;
@@ -52,8 +54,8 @@ public class Manager : MonoBehaviour
     private void Awake()
     {
         enableCastModeAction = InputSystem.actions.FindAction("Cast");
-
         waveSpawner = GetComponent<WaveSpawner>();
+        freePagesButton = InputSystem.actions.FindAction("PagesCheat");
     }
 
     // Update is called once per frame
@@ -98,5 +100,20 @@ public class Manager : MonoBehaviour
             spellInvokeQueued = false;
             CheckSpells?.Invoke();
         }
+    }
+
+    private void GiveFreePages(InputAction.CallbackContext context)
+    {
+        pages += 10;
+    }
+
+    private void OnEnable()
+    {
+        freePagesButton.performed += context => GiveFreePages(context);
+    }
+
+    private void OnDisable()
+    {
+        freePagesButton.performed -= context => GiveFreePages(context);
     }
 }
