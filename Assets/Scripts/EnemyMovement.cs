@@ -3,12 +3,15 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float health = 10;
+    public float health = 10f;
+    public int damage = 1;
+    public float attackTime = 1f;
 
     public Transform target;
     private NavMeshAgent agent;
-
     private Rigidbody rb;
+
+    private float lastAttackTime = 0f;
 
     public float DistToCrystal
     {
@@ -43,20 +46,22 @@ public class EnemyMovement : MonoBehaviour
         agent.destination = target.position;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Crystal")
         {
-            PlayerLives.Lives--;
-            WaveSpawner.enemiesAlive--;
-            Destroy(gameObject, 3);
+            if (PlayerLives.Lives > 0 && Time.time - lastAttackTime >= attackTime)
+            {
+                lastAttackTime = Time.time;
+                PlayerLives.Lives -= damage;
+                print($"Player lives left: {PlayerLives.Lives}");
+            }
         }
     }
 
     void Die()
     {
         WaveSpawner.enemiesAlive--;
-
         Destroy(gameObject);
     }
 }

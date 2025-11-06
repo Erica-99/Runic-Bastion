@@ -3,24 +3,10 @@ using UnityEngine;
 public class PlayerLives : MonoBehaviour
 {
     public static int Lives;
-    public int startLives = 20;
+    public int startLives = 100;
 
-    void Start()
+    void Awake()
     {
         Lives = startLives;
-    }
-
-    // this is only here to check if the enemies actually reduce lives when they reach the crystal
-    void Update()
-    {
-        if (Lives > 0)
-        {
-            //print(Lives);
-        }
-
-        if (Lives == 0)
-        {
-            print("I'm dead!!!");
-        }
     }
 }
