@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent (typeof(PlayerAudio))]
 public class CharacterMovement : MonoBehaviour
 {
     CharacterController cc;
@@ -20,17 +21,23 @@ public class CharacterMovement : MonoBehaviour
     private float currentJumpTime;
     private Vector3 vectorFriction;
 
+    private PlayerAudio playerAudioScript;
+    public float timeBetweenSteps;
+    private float currentStepTime;
+
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        playerAudioScript = GetComponent<PlayerAudio>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         movedir = Vector3.zero;
         vectorFriction = new Vector3(friction, 0, friction);
+        currentStepTime = 0f;
     }
 
     // Update is called once per frame
@@ -39,7 +46,7 @@ public class CharacterMovement : MonoBehaviour
         // Movement
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
-        Vector3 moveInputVector = new Vector3(moveInput.x, 0, moveInput.y) * speed * speedBuff; // Lerps provide acceleration effect
+        Vector3 moveInputVector = new Vector3(moveInput.x, 0, moveInput.y) * speed * speedBuff;
 
         Quaternion rotation = Quaternion.FromToRotation(Vector3.forward, transform.forward);
         moveInputVector = rotation * moveInputVector;
@@ -53,6 +60,10 @@ public class CharacterMovement : MonoBehaviour
             movedir.Scale(Vector3.one - vectorFriction);
             currentJumpTime = 0.2f;
             movedir += moveInputVector;
+            if ((currentStepTime > (timeBetweenSteps / speedBuff)) && moveInputVector.magnitude > 0f){
+                playerAudioScript.PlayStep();
+                currentStepTime = 0f;
+            }
         }
 
         if (currentJumpTime > 0)
@@ -64,6 +75,11 @@ public class CharacterMovement : MonoBehaviour
                 if (cc.velocity.y < 1.5f * jumpBuff)
                 {
                     movedir += Vector3.up * 1.5f * jumpBuff;
+                }
+
+                if (currentJumpTime >= 0.2f)
+                {
+                    playerAudioScript.PlayJump();
                 }
 
                 currentJumpTime -= Time.deltaTime;
@@ -83,6 +99,8 @@ public class CharacterMovement : MonoBehaviour
         }
 
         cc.Move(movedir * Time.deltaTime);
+
+        currentStepTime += Time.deltaTime;
     }
 
     Vector3 ClampxzMagnitude(Vector3 inputVector, float max)
