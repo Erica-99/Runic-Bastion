@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpellManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SpellManager : MonoBehaviour
     public GameObject drawingSphere;
 
     public bool showDebug;
+    private InputAction showDebugButton;
 
     void Awake()
     {
@@ -18,6 +20,7 @@ public class SpellManager : MonoBehaviour
         gameManager = manager.GetComponent<Manager>();
 
         spells = new List<GameObject>();
+        showDebugButton = InputSystem.actions.FindAction("ShowDebug");
     }
 
     public void createSpells()
@@ -59,6 +62,7 @@ public class SpellManager : MonoBehaviour
 
         if (selectedSpell != null)
         {
+            gameManager.UsePage();
             selectedSpell.DoSpell();
         }
         else
@@ -80,14 +84,21 @@ public class SpellManager : MonoBehaviour
         spells.Clear();
     }
 
+    private void ToggleDebug()
+    {
+        showDebug = !showDebug;
+    }
+
     private void OnEnable()
     {
         gameManager.CheckSpells += CheckSpellCompletion;
+        showDebugButton.performed += context => ToggleDebug();
     }
 
     private void OnDisable()
     {
         gameManager.CheckSpells -= CheckSpellCompletion;
+        showDebugButton.performed += context => ToggleDebug();
     }
 
 }

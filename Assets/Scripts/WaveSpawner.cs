@@ -13,7 +13,7 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveNumber = 0;
 
-    private bool gameEnded = false;
+    public bool gameEnded = false;
 
     public GameObject gameOverUi;
     public GameObject gameWinUi;

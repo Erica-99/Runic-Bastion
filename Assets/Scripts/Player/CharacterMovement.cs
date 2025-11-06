@@ -25,12 +25,16 @@ public class CharacterMovement : MonoBehaviour
     public float timeBetweenSteps;
     private float currentStepTime;
 
+    private WaveSpawner waveSpawner;
+
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         playerAudioScript = GetComponent<PlayerAudio>();
+        GameObject manager = GameObject.FindGameObjectWithTag("GameController");
+        waveSpawner = manager.GetComponent<WaveSpawner>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,7 +48,12 @@ public class CharacterMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Movement
-        Vector2 moveInput = moveAction.ReadValue<Vector2>();
+
+        Vector2 moveInput = new Vector2();
+        if (!waveSpawner.gameEnded)
+        {
+            moveInput = moveAction.ReadValue<Vector2>();
+        }
 
         Vector3 moveInputVector = new Vector3(moveInput.x, 0, moveInput.y) * speed * speedBuff;
 
@@ -68,7 +77,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (currentJumpTime > 0)
         {
-            if (jumpAction.IsPressed())
+            if (!waveSpawner.gameEnded && jumpAction.IsPressed())
             {
                 movedir += Vector3.up * jumpSpeed * jumpBuff;
 
