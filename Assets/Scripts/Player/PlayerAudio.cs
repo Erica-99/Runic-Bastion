@@ -1,18 +1,24 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerAudio : MonoBehaviour
 {
     // References to audio clips and sources
     public AudioClip jumpSoundClip;
+    public AudioClip[] stepSoundClips;
     public AudioSource jumpAudioSource;
-    public AudioClip stepSoundClip;
     public AudioSource stepAudioSource;
+
+    private int prevrand = 0;
 
     public void PlayJump()
     {
         if (jumpAudioSource != null && jumpSoundClip != null)
         {
-            jumpAudioSource.PlayOneShot(jumpSoundClip);
+            if (!jumpAudioSource.isPlaying)
+            {
+                jumpAudioSource.PlayOneShot(jumpSoundClip);
+            }
         }
         else
         {
@@ -22,22 +28,28 @@ public class PlayerAudio : MonoBehaviour
 
     public void PlayStep()
     {
-        if (stepAudioSource && stepSoundClip && !stepAudioSource.isPlaying)
-            stepAudioSource.PlayOneShot(stepSoundClip);
+        int randomIndex = GenerateStepIndex();
+
+        if (stepAudioSource && stepSoundClips.Length > 0f)
+        {
+            stepAudioSource.PlayOneShot(stepSoundClips[randomIndex]);
+        }
     }
 
-    private void Update()
+    private int GenerateStepIndex()
     {
-        // Jump sound
-        if (Input.GetKeyDown(KeyCode.Space))
-            PlayJump();
-
-        if (Input.GetKeyDown(KeyCode.W) ||
-            Input.GetKeyDown(KeyCode.A) ||
-            Input.GetKeyDown(KeyCode.S) ||
-            Input.GetKeyDown(KeyCode.D))
+        int randClipIndex = -1;
+        do
         {
-            PlayStep();
-        }
+            float randFloat = Random.value;
+
+            randFloat = Mathf.Clamp(randFloat * stepSoundClips.Length, 0f, 7.99999f);
+
+            randClipIndex = (int)randFloat;
+        } while (randClipIndex == prevrand);
+        
+        prevrand = randClipIndex;
+
+        return randClipIndex;
     }
 }

@@ -60,18 +60,14 @@ public class CharacterMovement : MonoBehaviour
             movedir.Scale(Vector3.one - vectorFriction);
             currentJumpTime = 0.2f;
             movedir += moveInputVector;
-            if (currentStepTime > timeBetweenSteps / speedBuff){
+            if ((currentStepTime > (timeBetweenSteps / speedBuff)) && moveInputVector.magnitude > 0f){
                 playerAudioScript.PlayStep();
+                currentStepTime = 0f;
             }
         }
 
         if (currentJumpTime > 0)
         {
-            if (jumpAction.WasPressedThisFrame())
-            {
-                playerAudioScript.PlayJump();
-            }
-
             if (jumpAction.IsPressed())
             {
                 movedir += Vector3.up * jumpSpeed * jumpBuff;
@@ -79,6 +75,11 @@ public class CharacterMovement : MonoBehaviour
                 if (cc.velocity.y < 1.5f * jumpBuff)
                 {
                     movedir += Vector3.up * 1.5f * jumpBuff;
+                }
+
+                if (currentJumpTime >= 0.2f)
+                {
+                    playerAudioScript.PlayJump();
                 }
 
                 currentJumpTime -= Time.deltaTime;
