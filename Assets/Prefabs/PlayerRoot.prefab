@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 360540212284021658}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: -0.7, y: -0.3, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 4358412049836027575}
   - component: {fileID: 6680597442687772037}
   - component: {fileID: 2843572867303885186}
+  - component: {fileID: 9182146081656654624}
   m_Layer: 6
   m_Name: WizardController
   m_TagString: Player
@@ -588,6 +589,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementScript: {fileID: 4358412049836027575}
   attackScript: {fileID: 6680597442687772037}
+--- !u!81 &9182146081656654624
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3387831898070662639}
+  m_Enabled: 1
 --- !u!1 &3549561694975282795
 GameObject:
   m_ObjectHideFlags: 0
