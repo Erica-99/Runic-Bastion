@@ -59,6 +59,7 @@ public class SpellManager : MonoBehaviour
 
         if (selectedSpell != null)
         {
+            gameManager.UsePage();
             selectedSpell.DoSpell();
         }
         else

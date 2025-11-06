@@ -14,6 +14,7 @@ public class CameraBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject manager;
     private Manager managerScript;
+    private WaveSpawner waveSpawner;
 
     private void Start()
     {
@@ -22,12 +23,13 @@ public class CameraBehaviour : MonoBehaviour
         lookAction = InputSystem.actions.FindAction("Look");
 
         managerScript = manager.GetComponent<Manager>();
+        waveSpawner = manager.GetComponent<WaveSpawner>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!managerScript.castMode)
+        if (!(managerScript.castMode || waveSpawner.gameEnded))
         {
             Vector2 lookInput = lookAction.ReadValue<Vector2>() * Time.smoothDeltaTime;
 
