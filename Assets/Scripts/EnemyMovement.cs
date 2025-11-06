@@ -46,14 +46,6 @@ public class EnemyMovement : MonoBehaviour
         agent.destination = target.position;
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Crystal")
-        {
-            print("I touched the crystal");
-        }
-    }
-
     void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Crystal")

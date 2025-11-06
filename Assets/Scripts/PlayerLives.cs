@@ -5,16 +5,8 @@ public class PlayerLives : MonoBehaviour
     public static int Lives;
     public int startLives = 100;
 
-    void Start()
+    void Awake()
     {
         Lives = startLives;
-    }
-
-    void Update()
-    {
-        if (Lives == 0)
-        {
-            print("I'm dead!!!");
-        }
     }
 }

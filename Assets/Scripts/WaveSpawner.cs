@@ -13,7 +13,15 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveNumber = 0;
 
-    private bool gameEnded - false;
+    private bool gameEnded = false;
+
+    public GameObject gameOverUi;
+    public GameObject gameWinUi;
+
+    private void Awake()
+    {
+        enemiesAlive = 0;
+    }
 
     void Update()
     {
@@ -77,13 +85,11 @@ public class WaveSpawner : MonoBehaviour
 
         if (won)
         {
-            print("You win! Yippe!");
+            gameWinUi.SetActive(true);
         }
         else
         {
-            print("You lose...");
+            gameOverUi.SetActive(true);
         }
-
-        StopAllCoroutines();
     }
 }
