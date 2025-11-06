@@ -804,9 +804,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castMode: 0
   spellPrefabs:
-  - {fileID: 3511797149155292536, guid: dcfc792c31f259e4b9dd78661e8fd40e, type: 3}
   - {fileID: 3511797149155292536, guid: f5e8858398543b043b0413c5aba24904, type: 3}
   - {fileID: 3511797149155292536, guid: 3f3919ecffcebe6459e4dabe2073af5d, type: 3}
+  - {fileID: 3511797149155292536, guid: 185a7ef90c42acf4e94bc3406a76b229, type: 3}
+  - {fileID: 3511797149155292536, guid: bcf01b858680ccb41a5d4a578138af8f, type: 3}
   WizardController: {fileID: 1899223050}
   crosshair: {fileID: 663120668}
 --- !u!4 &1065823496
@@ -836,13 +837,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ccf8aac09a975438c7f0df85ac4b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 5472083089169342736, guid: cc4b6216dd78cff42aaf814d2eefb48e, type: 3}
+  waves:
+  - enemy: {fileID: 1396315317925102058, guid: cc4b6216dd78cff42aaf814d2eefb48e, type: 3}
+    count: 5
+    rate: 1
   spawnPoints:
   - {fileID: 1292048859}
   - {fileID: 1648692031}
   - {fileID: 753540475}
   - {fileID: 1842272802}
-  maxWaves: 3
   timeBetweenWaves: 5
 --- !u!114 &1065823498
 MonoBehaviour:
@@ -1345,6 +1348,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2034270604286342259, guid: 0de8c1021f742b94b8698d5ce892aa12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067874429264167730, guid: 0de8c1021f742b94b8698d5ce892aa12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2955250154889396781, guid: 0de8c1021f742b94b8698d5ce892aa12, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.79
@@ -1385,6 +1396,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4831917691474965430, guid: 0de8c1021f742b94b8698d5ce892aa12, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8564257294059973991, guid: 0de8c1021f742b94b8698d5ce892aa12, type: 3}
       propertyPath: m_Name
       value: BuffTower
@@ -1402,9 +1417,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2591566808952993199, guid: ec0a389246dd0fd45a13d348a65aaf2b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500011336579309380, guid: ec0a389246dd0fd45a13d348a65aaf2b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6598813407890765566, guid: ec0a389246dd0fd45a13d348a65aaf2b, type: 3}
       propertyPath: m_Name
       value: PlantTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515001384845085336, guid: ec0a389246dd0fd45a13d348a65aaf2b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8617989059353005687, guid: ec0a389246dd0fd45a13d348a65aaf2b, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using static UnityEngine.Rendering.HableCurve;
 
 namespace RunicBastion.Utils
 {

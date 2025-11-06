@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
+  damage: 5
+  attackTime: 5
   target: {fileID: 4945321535406648159, guid: 68e2c60b1afd03140920bb4525769e91, type: 3}
 --- !u!195 &1513759532000540790
 NavMeshAgent:

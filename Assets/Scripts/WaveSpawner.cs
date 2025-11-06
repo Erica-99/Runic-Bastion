@@ -6,7 +6,6 @@ public class WaveSpawner : MonoBehaviour
     public static int enemiesAlive = 0;
 
     public Wave[] waves;
-
     public Transform[] spawnPoints;
 
     public float timeBetweenWaves = 5f;
@@ -14,8 +13,33 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveNumber = 0;
 
+    private bool gameEnded = false;
+
+    public GameObject gameOverUi;
+    public GameObject gameWinUi;
+
+    private void Awake()
+    {
+        enemiesAlive = 0;
+    }
+
     void Update()
     {
+        if (gameEnded)
+            return;
+
+        if (PlayerLives.Lives <= 0)
+        {
+            GameOver(false);
+            return;
+        }
+
+        if (waveNumber >= waves.Length && enemiesAlive == 0)
+        {
+            GameOver(true);
+            return;
+        }
+
         if (enemiesAlive > 0)
         {
             return;
@@ -53,5 +77,19 @@ public class WaveSpawner : MonoBehaviour
 
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
         enemiesAlive++;
+    }
+
+    void GameOver(bool won)
+    {
+        gameEnded = true;
+
+        if (won)
+        {
+            gameWinUi.SetActive(true);
+        }
+        else
+        {
+            gameOverUi.SetActive(true);
+        }
     }
 }
