@@ -1,0 +1,37 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class VineTowerSpell : Rune
+{
+    public override int Priority { get; set; } = 0;
+
+    public GameObject VineTower;
+
+    private void Awake()
+    {
+        // Scaled to [0,1] x and y on the drawable section of the paper. This will be resized automatically to the paper.
+        // (0,0) is bottom right and (1,1) is top left.
+        customRune = new List<Vector2>() {
+        new Vector2(0.5f, 0.95f),
+        new Vector2(0.1f, 0.7f),
+        new Vector2(0.9f, 0.5f),
+        new Vector2(0.5f, 0.3f),
+        new Vector2(0.5f, 0.05f)
+        };
+    }
+
+    public override void DoSpell()
+    {
+        Debug.Log("VINE TOWER :)");
+
+        Manager manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<Manager>();
+
+        AttackManager atkman = manager.WizardController.GetComponent<AttackManager>();
+
+        GameObject instance = Instantiate(VineTower);
+
+        atkman.LoadAttack(instance);
+
+        atkman.ReadyAttack();
+    }
+}
