@@ -84,7 +84,6 @@
     <Compile Include="Assets\Scripts\Spells\FireballSpell.cs" />
     <Compile Include="Assets\Scripts\Player\DrawManager.cs" />
     <Compile Include="Assets\Scripts\Towers\BuffSpell.cs" />
-    <Compile Include="Assets\Scripts\UI\BasicInput.cs" />
     <Compile Include="Assets\Scripts\Utils\RingEditorTool.cs" />
     <Compile Include="Assets\Scripts\Spells\ICastable.cs" />
     <Compile Include="Assets\Scripts\Waypoints.cs" />
