@@ -18,7 +18,7 @@ public class Manager : MonoBehaviour
 
     public GameObject crosshair;
 
-    private int pages = 3;
+    private int pages = 1;
     public float timeBetweenPages = 7f;
     private float currentPageTimeElapsed = 0f;
 
