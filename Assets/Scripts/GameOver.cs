@@ -10,6 +10,6 @@ public class GameOver : MonoBehaviour
 
     public void Menu()
     {
-        print("This goes to the menu");
+        SceneManager.LoadScene("main menu");
     }
 }

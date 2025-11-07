@@ -164,4 +164,12 @@ public class PlaceableTower : MonoBehaviour, ICastable
     {
         DoCast();
     }
+
+    private void OnDestroy()
+    {
+        if (indicatorRenderer != null)
+        {
+            Destroy(indicator);
+        }
+    }
 }
