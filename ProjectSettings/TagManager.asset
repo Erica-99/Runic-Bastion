@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Crystal
   - Hedge
+  - Pause
   layers:
   - Default
   - TransparentFX
