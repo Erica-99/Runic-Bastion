@@ -1,4 +1,4 @@
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 
 namespace RunicBastion.Utils
@@ -32,17 +32,17 @@ namespace RunicBastion.Utils
         }
     }
 
-    [CustomEditor(typeof(RingEditorTool))]
-    public class RingEditorToolEditor : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            DrawDefaultInspector();
-            RingEditorTool ringTool = (RingEditorTool)target;
-            if (GUILayout.Button("Regenerate Mesh"))
-            {
-                ringTool.RegenerateMesh();
-            }
-        }
-    }
+    //[CustomEditor(typeof(RingEditorTool))]
+    //public class RingEditorToolEditor : Editor
+    //{
+    //    public override void OnInspectorGUI()
+    //    {
+    //        DrawDefaultInspector();
+    //        RingEditorTool ringTool = (RingEditorTool)target;
+    //        if (GUILayout.Button("Regenerate Mesh"))
+    //        {
+    //            ringTool.RegenerateMesh();
+    //        }
+    //    }
+    //}
 }

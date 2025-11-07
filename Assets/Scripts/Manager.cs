@@ -26,6 +26,7 @@ public class Manager : MonoBehaviour
     public TextMeshProUGUI pagesTextbox;
 
     private InputAction freePagesButton;
+    public int maxFPS = 60;
 
     public void UsePage()
     {
@@ -53,6 +54,9 @@ public class Manager : MonoBehaviour
 
     private void Awake()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = maxFPS;
+
         enableCastModeAction = InputSystem.actions.FindAction("Cast");
         waveSpawner = GetComponent<WaveSpawner>();
         freePagesButton = InputSystem.actions.FindAction("PagesCheat");

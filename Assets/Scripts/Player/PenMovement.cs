@@ -15,17 +15,22 @@ public class PenMovement : MonoBehaviour
     private Collider nibCollider;
     private Manager managerScript;
 
+    //private Rigidbody nibRB;
+
     private void Start()
     {
         GameObject manager = GameObject.FindGameObjectWithTag("GameController");
         managerScript = manager.GetComponent<Manager>();
         nibCollider = nib.GetComponent<Collider>();
 
+        //nibRB = nib.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Physics.SyncTransforms();
+
         if (followCursor)
         {
             Vector3 currentTarget;
@@ -42,12 +47,15 @@ public class PenMovement : MonoBehaviour
 
             Quaternion rotation = Quaternion.LookRotation(currentTarget - transform.position);
 
+
             nib.transform.SetPositionAndRotation(currentTarget, rotation);
+            //nibRB.Move(currentTarget, rotation);
         } else
         {
             nibCollider.enabled = false;
 
             Vector3 worldResetPoint = transform.TransformPoint(resetPoint);
+            //nibRB.Move(worldResetPoint, transform.rotation);
             nib.transform.SetPositionAndRotation(worldResetPoint, transform.rotation);
         }
     }
