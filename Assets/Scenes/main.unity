@@ -1799,7 +1799,9 @@ MonoBehaviour:
   - {fileID: 3511797149155292536, guid: bcf01b858680ccb41a5d4a578138af8f, type: 3}
   WizardController: {fileID: 1899223050}
   crosshair: {fileID: 663120668}
+  timeBetweenPages: 7
   pagesTextbox: {fileID: 434843736}
+  maxFPS: 60
 --- !u!4 &1065823496
 Transform:
   m_ObjectHideFlags: 0
