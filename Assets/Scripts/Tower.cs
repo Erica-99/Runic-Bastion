@@ -1,8 +1,7 @@
 #nullable enable
-using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
-using RunicBastion.Utils;
+//using RunicBastion.Utils;
 
 
 public abstract class Tower : MonoBehaviour
@@ -77,21 +76,21 @@ public abstract class Tower : MonoBehaviour
 
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (gizmoMaterial == null)
-        {
-            string[] ringMatGUIDs = AssetDatabase.FindAssets("RangeRing", new string[] { "Assets/Materials" });
-            string path = AssetDatabase.GUIDToAssetPath(ringMatGUIDs[0]);
-            Material loadedMaterial = AssetDatabase.LoadAssetAtPath<Material>(path);
-            gizmoMaterial = loadedMaterial;
-        }
+    //private void OnDrawGizmosSelected()
+    //{
+    //    if (gizmoMaterial == null)
+    //    {
+    //        string[] ringMatGUIDs = AssetDatabase.FindAssets("RangeRing", new string[] { "Assets/Materials" });
+    //        string path = AssetDatabase.GUIDToAssetPath(ringMatGUIDs[0]);
+    //        Material loadedMaterial = AssetDatabase.LoadAssetAtPath<Material>(path);
+    //        gizmoMaterial = loadedMaterial;
+    //    }
 
-        Matrix4x4 oldMatrix = Gizmos.matrix;
-        Matrix4x4 matrix = Matrix4x4.TRS(transform.position + 4.5f * Vector3.up, Quaternion.identity, Vector3.one);
-        Mesh rangeRing = CustomMeshGenerator.GenerateRingMesh(60, radius, 1f, 0.2f);
-        gizmoMaterial.SetPass(6);
-        Graphics.DrawMeshNow(rangeRing, matrix);
-        Gizmos.matrix = oldMatrix;
-    }
+    //    Matrix4x4 oldMatrix = Gizmos.matrix;
+    //    Matrix4x4 matrix = Matrix4x4.TRS(transform.position + 4.5f * Vector3.up, Quaternion.identity, Vector3.one);
+    //    Mesh rangeRing = CustomMeshGenerator.GenerateRingMesh(60, radius, 1f, 0.2f);
+    //    gizmoMaterial.SetPass(6);
+    //    Graphics.DrawMeshNow(rangeRing, matrix);
+    //    Gizmos.matrix = oldMatrix;
+    //}
 }

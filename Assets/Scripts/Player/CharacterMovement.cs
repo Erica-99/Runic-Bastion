@@ -48,6 +48,7 @@ public class CharacterMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Movement
+        Physics.SyncTransforms();
 
         Vector2 moveInput = new Vector2();
         if (!waveSpawner.gameEnded)

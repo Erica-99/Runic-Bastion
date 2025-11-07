@@ -19,7 +19,7 @@ public class DrawManager : MonoBehaviour
     [SerializeField]
     private Camera playerCam;
     [SerializeField]
-    private LayerMask paperLayerMask;
+    public LayerMask paperLayerMask;
 
     public GameObject pen;
     private PenMovement penMovement;
@@ -42,6 +42,7 @@ public class DrawManager : MonoBehaviour
     private SpellManager spellManager;
 
     private bool createdSpells;
+    private Renderer rend;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,6 +56,7 @@ public class DrawManager : MonoBehaviour
         Texture2D currentTexture = paperObject.GetComponent<Renderer>().material.GetTexture("_MainTex") as Texture2D;
         originalTexture = new Texture2D(currentTexture.width, currentTexture.height, TextureFormat.ARGB32, currentTexture.mipmapCount, false);
         Graphics.CopyTexture(currentTexture, originalTexture);
+        rend = paperObject.transform.GetComponent<Renderer>();
 
         savedBrushWidth = brushWidth;
         pixelColours = Enumerable.Repeat(Color.black, savedBrushWidth*savedBrushWidth).ToArray();
@@ -130,7 +132,7 @@ public class DrawManager : MonoBehaviour
             return;
         }
 
-        Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.blue);
+        Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.blue, 0.1f);
 
         if (hit.transform != paperObject.transform)
         {
@@ -145,13 +147,19 @@ public class DrawManager : MonoBehaviour
         {
             penMovement.mouseDown = true;
 
-            Renderer rend = hit.transform.GetComponent<Renderer>();
+            
             MeshCollider meshCollider = hit.collider as MeshCollider;
 
-            if (rend == null || rend.sharedMaterial == null || rend.sharedMaterial.mainTexture == null || meshCollider == null)
+            if (rend == null || rend.sharedMaterial == null || rend.sharedMaterial.GetTexture("_MainTex") == null || meshCollider == null)
+            {
+                Debug.Log("Failed retrieving material somehow.");
                 return;
+            }
 
-            Texture2D tex = rend.material.mainTexture as Texture2D;
+            //Texture2D tex = Instantiate(rend.material.GetTexture("_MainTex")) as Texture2D;
+            //rend.material.SetTexture("_MainTex", tex);
+            Texture2D tex = rend.material.GetTexture("_MainTex") as Texture2D;
+            //Texture2D tex = rend.material.mainTexture as Texture2D;
             Vector2 pixelUV = hit.textureCoord;
             pixelUV.x *= tex.width;
             pixelUV.y *= tex.height;

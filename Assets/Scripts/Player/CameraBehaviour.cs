@@ -16,6 +16,8 @@ public class CameraBehaviour : MonoBehaviour
     private Manager managerScript;
     private WaveSpawner waveSpawner;
 
+    //private Rigidbody rb;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -24,11 +26,15 @@ public class CameraBehaviour : MonoBehaviour
 
         managerScript = manager.GetComponent<Manager>();
         waveSpawner = manager.GetComponent<WaveSpawner>();
+
+        //rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Physics.SyncTransforms();
+
         if (!(managerScript.castMode || waveSpawner.gameEnded))
         {
             Vector2 lookInput = lookAction.ReadValue<Vector2>() * Time.smoothDeltaTime;
@@ -47,12 +53,19 @@ public class CameraBehaviour : MonoBehaviour
             float cosPhi = Mathf.Cos(phi);
 
             Vector3 fwd = new Vector3(cosPhi * sinTheta, sinPhi, cosPhi * cosTheta);
-            transform.forward = fwd;
+
+            Quaternion qrot = Quaternion.LookRotation(fwd, Vector3.up);
+            
+            //rb.MoveRotation(qrot);
 
             player.transform.forward = new Vector3(fwd.x, 0, fwd.z);
+            transform.forward = fwd;
+
         }
 
         // Sync movement to player
-        transform.position = player.transform.position + new Vector3(0, 1f, 0);
+        //transform.position = player.transform.position + new Vector3(0, 1f, 0);
+
+        //rb.MovePosition(player.transform.position + new Vector3(0, 1f, 0));
     }
 }
